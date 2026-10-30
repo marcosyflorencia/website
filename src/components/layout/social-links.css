@@ -1,0 +1,10 @@
+.social-links { display: flex; align-items: center; gap: 1rem; border-left: 1px solid var(--color-white); padding-left: 1.25rem; min-height: 2.0625rem; }
+.social-links a { display: flex; align-items: center; justify-content: center; width: 1.25rem; height: 2.0625rem; }
+.social-links img { display: block; width: 1.25rem; height: 1.25rem; filter: brightness(0) invert(1); }
+.social-links a:hover { opacity: 0.7; }
+@media (max-width: 900px) {
+  .site-navigation { flex-wrap: wrap; }
+}
+@media (max-width: 600px) {
+  .header > .social-links { margin-left: auto; padding: 0 1rem 0 0; border: 0; border-right: 1px solid rgb(255 244 231 / 50%); }
+}

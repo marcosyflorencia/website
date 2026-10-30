@@ -1,0 +1,31 @@
+.contact {
+  --contact-panel-background: rgb(13 13 13 / 50%);
+  position: relative;
+  min-height: 115svh;
+  background: var(--color-background);
+}
+.contact:focus { outline: none; }
+.contact-scene { position: fixed; inset: 0; display: flex; align-items: flex-start; z-index: 1; overflow-y: auto; pointer-events: none; visibility: var(--contact-visibility, hidden); opacity: var(--contact-opacity, 0); }
+.contact-background { position: fixed; inset: 0; height: 100svh; overflow: hidden; z-index: 0; pointer-events: none; opacity: var(--contact-opacity, 0); }
+
+.page-sections > section.contact { scroll-margin-top: 0; }
+.contact-content { width: 36rem; max-width: calc(88.125% - 1.5rem); margin: max(calc(var(--nav-height) + 2rem), 23.8386svh) 0 3rem 11.875%; padding: 2rem 1.5rem; background: var(--contact-panel-background); pointer-events: auto; flex-shrink: 0; }
+.contact-content h2 { margin: 0; color: var(--color-white); font: var(--font-weight-bold) var(--font-size-title-big)/var(--line-height-title-big) var(--font-heading); }
+.contact-heading { display: grid; gap: 0.5rem; margin-bottom: 1.5rem; }
+.contact-heading p { margin: 0; color: var(--color-white); font-size: var(--font-size-body-medium); font-weight: var(--font-weight-light); line-height: 1.375rem; letter-spacing: -0.014375rem; }
+.contact-heading a { text-decoration: underline; text-underline-offset: 0.15em; overflow-wrap: anywhere; }
+.contact-form { display: grid; gap: 1.5rem; }
+.contact-fields { display: grid; gap: 1.5rem; }
+.contact-form > .button { justify-self: start; }
+.contact-status { margin: 0; font-size: var(--font-size-body-small); line-height: var(--line-height-body); }
+#questions > * { opacity: var(--questions-opacity, 1); }
+@media (max-width: 700px) {
+  .contact { min-height: 110svh; }
+  .contact-background::after { content: ''; position: absolute; inset: 0; background: var(--color-backdrop); }
+  .contact-content { width: calc(100% - 3rem); max-width: 31rem; margin-inline: auto; }
+
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact { min-height: 100svh; }
+  #questions > * { opacity: 1; }
+}

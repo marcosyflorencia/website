@@ -1,0 +1,20 @@
+/* Shared type scale. Rem values use the browser default 16px root size. */
+:root {
+  --font-body: 'Roboto', Arial, sans-serif;
+  --font-heading: 'Times New Roman', Times, serif;
+  --font-nav: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  --font-size-body-bg: 1.125rem; /* 18px */
+  --font-size-body-medium: 1rem; /* 16px */
+  --font-size-body-small: 0.875rem; /* 14px */
+  --font-size-title-medium: 1.5rem; /* 24px */
+  --font-size-title-big: 2rem; /* 32px */
+  --font-size-button: var(--font-size-body-bg);
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --line-height-body: 1.75rem;
+  --line-height-title-medium: 1.75rem;
+  --line-height-title-big: 2.375rem;
+  --line-height-button: 1.5rem;
+}
