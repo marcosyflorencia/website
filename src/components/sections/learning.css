@@ -21,6 +21,7 @@
 .offering-content h3 { margin: 0; font: var(--font-weight-bold) var(--font-size-body-large)/var(--line-height-body) var(--font-body); }
 .offering-content p { max-width: 34rem; margin: 0; font-size: var(--learning-copy-size); font-weight: var(--font-weight-light); line-height: var(--line-height-body); white-space: pre-line; }
 .offering-content .offering-schedule { color: var(--color-accent); font-weight: var(--font-weight-medium); }
+.offering-content .button { margin-top: 0.25rem; }
 .offering-carousel { position: relative; width: 100%; max-width: 34rem; min-width: 0; justify-self: end; aspect-ratio: 1.58 / 1; overflow: hidden; background: var(--color-wine); }
 .offering-carousel-images { position: absolute; inset: 0; }
 .offering-carousel-image { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 22%; opacity: 0; transition: opacity 700ms ease-in-out; }

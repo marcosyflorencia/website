@@ -57,6 +57,8 @@ learning:
 
 `schedule` is optional. Put image files in `public/media/learning`, then add their paths under that offering's `images` list. One image displays normally; two or more images automatically become a slideshow with previous and next buttons.
 
+Learning action buttons are managed by the website code and do not need to be added here.
+
 ## Hiring performance videos
 
 Each item under `hiring.videos` needs only a title and video URL:
