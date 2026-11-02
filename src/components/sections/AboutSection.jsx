@@ -86,10 +86,9 @@ export default function AboutSection() {
 
   return (
     <section ref={root} className="about" id="about" aria-labelledby="about-title" tabIndex={-1} style={{ '--about-scroll-distance': `${scrollDistance}px` }}>
-      <div ref={stage} className="about-stage">
-        <div className="about-background about-background--texture"><img src={texture} alt="" /></div>
-        <div ref={mapLayer} className="about-background about-background--map"><img src={map} alt="" /></div>
-        <h2 className="about-title" id="about-title">About Us</h2>
+        <div ref={stage} className="about-stage">
+          <div className="about-background about-background--texture"><img src={texture} alt="" /></div>
+          <div ref={mapLayer} className="about-background about-background--map"><img src={map} alt="" /></div>
         <div ref={galleryRef} className="about-gallery" aria-hidden="true">
           {chapters.map((chapter, index) => (
             <div key={chapter.id} ref={element => { imageRefs.current[index] = element }} className="about-photo">
@@ -97,15 +96,18 @@ export default function AboutSection() {
             </div>
           ))}
         </div>
-        <div className="about-story">
-          {chapters.map((chapter, index) => (
-            <article key={chapter.id} className="about-chapter" ref={element => { chapterRefs.current[index] = element }}>
-              <div className="about-copy">
-                <p>{chapter.description}</p>
-              </div>
-              <IntroductionMedia url={chapter.mediaUrl} inline />
-            </article>
-          ))}
+        <div className="about-text-column">
+          <h2 className="about-title" id="about-title">About Us</h2>
+          <div className="about-story">
+            {chapters.map((chapter, index) => (
+              <article key={chapter.id} className="about-chapter" ref={element => { chapterRefs.current[index] = element }}>
+                <div className="about-copy">
+                  <p>{chapter.description}</p>
+                </div>
+                <IntroductionMedia url={chapter.mediaUrl} inline />
+              </article>
+            ))}
+          </div>
         </div>
         <div className="about-caption-band">
           <blockquote className="about-caption">
