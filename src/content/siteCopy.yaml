@@ -52,21 +52,15 @@ learning:
         - /media/learning/group-class.png
 
 hiring:
-  title: Hiring For Events
-  action: Send Inquiry
-  description: |
-    Marcos and Florencia bring the beauty and emotion of Argentine tango to weddings, birthdays, corporate gatherings, and other private events, creating an elegant and memorable experience for every audience.
-  galleryIntroduction: See past performance examples below
-  videoGallery:
-    groupLabel: Performance videos
-    choicesLabel: Choose a performance
-    playLabel: Play
-    videoTitleSuffix: performance video
-    videos:
-      salon: Salon Tango
-      stage: Stage Tango
-      vals: Vals
-      milonga: Milonga
+  videos:
+    - title: Salon Tango
+      videoUrl: https://www.youtube.com/watch?v=DBRWDRs3u5A
+    - title: Stage Tango
+      videoUrl: https://www.youtube.com/watch?v=DBRWDRs3u5A
+    - title: Vals
+      videoUrl: https://www.youtube.com/watch?v=DBRWDRs3u5A
+    - title: Milonga
+      videoUrl: https://www.youtube.com/watch?v=DBRWDRs3u5A
 
 faq:
   title: Q&A

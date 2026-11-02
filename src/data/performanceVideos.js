@@ -1,13 +1,24 @@
 import artwork from '../assets/events/performance-gallery.png'
 import { siteCopy } from '../content/siteCopy.js'
+import { resolveMediaUrl } from '../utils/mediaUrl.js'
 
-const videoCopy = siteCopy.hiring.videoGallery.videos
+const thumbnailCrops = [
+  [101, 761, 280, 175],
+  [413, 761, 280, 175],
+  [725, 761, 280, 175],
+  [1036, 761, 280, 175],
+]
 
-export const performanceVideos = [
-  { id: 'salon', title: videoCopy.salon, thumbnail: [101, 761, 280, 175] },
-  { id: 'stage', title: videoCopy.stage, thumbnail: [413, 761, 280, 175] },
-  { id: 'vals', title: videoCopy.vals, thumbnail: [725, 761, 280, 175] },
-  { id: 'milonga', title: videoCopy.milonga, thumbnail: [1036, 761, 280, 175] },
-].map(video => ({ ...video, youtubeId: 'DBRWDRs3u5A', artwork }))
+const maintainedVideos = Array.isArray(siteCopy.hiring.videos) ? siteCopy.hiring.videos : []
 
 export const performancePoster = { src: artwork, crop: [99, 141, 1219, 506] }
+
+export const performanceVideos = maintainedVideos
+  .filter(video => video?.title && video?.videoUrl)
+  .map((video, index) => ({
+    id: `performance-${index}`,
+    title: video.title,
+    media: resolveMediaUrl(video.videoUrl),
+    thumbnail: thumbnailCrops[index] ?? performancePoster.crop,
+    artwork,
+  }))

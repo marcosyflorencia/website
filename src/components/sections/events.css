@@ -15,7 +15,8 @@
 .events-intro p { margin: 0; max-width: 52rem; font-size: var(--font-size-body-bg); font-weight: var(--font-weight-light); line-height: var(--line-height-body); }
 .video-gallery { width: 100%; margin-inline: auto; display: grid; grid-template-columns: minmax(0, 1fr) 10rem; gap: 1.5rem; align-items: start; }
 .video-player { width: 100%; margin-left: 0; margin-right: auto; aspect-ratio: 16 / 9; background: var(--events-background); position: relative; }
-.video-player iframe { display: block; width: 100%; height: 100%; border: 0; }
+.video-player iframe, .video-player video { display: block; width: 100%; height: 100%; border: 0; }
+.video-player video { object-fit: contain; }
 .video-poster { position: relative; display: block; width: 100%; height: 100%; background: var(--events-background); padding: 0; border: 0; color: var(--color-cream); cursor: pointer; }
 .video-poster > .video-artwork { position: absolute; top: 50%; left: 0; right: 0; height: auto; aspect-ratio: 1219 / 506; transform: translateY(-50%); }
 .video-artwork { display: block; position: relative; height: 100%; width: 100%; overflow: hidden; }

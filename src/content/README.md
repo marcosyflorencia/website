@@ -57,4 +57,17 @@ learning:
 
 `schedule` is optional. Put image files in `public/media/learning`, then add their paths under that offering's `images` list. One image displays normally; two or more images automatically become a slideshow with previous and next buttons.
 
-Do not rename fields such as `introduction`, `chapters`, `description`, `mediaUrl`, `learning`, `offerings`, `images`, `id`, or `answer`; the website uses those names to place the copy correctly.
+## Hiring performance videos
+
+Each item under `hiring.videos` needs only a title and video URL:
+
+```yaml
+hiring:
+  videos:
+    - title: Salon Tango
+      videoUrl: https://www.youtube.com/watch?v=example
+```
+
+Add, remove, or reorder video items as needed. YouTube, Vimeo, and direct video-file URLs are supported.
+
+Do not rename fields such as `introduction`, `chapters`, `description`, `mediaUrl`, `learning`, `offerings`, `images`, `hiring`, `videos`, `videoUrl`, `id`, or `answer`; the website uses those names to place the copy correctly.
