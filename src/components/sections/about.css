@@ -28,8 +28,6 @@
 .about-background { position: absolute; inset: 0; overflow: hidden; }
 .about-background img { position: absolute; max-width: none; }
 .about-background--texture img { width: 120.91%; height: 106.35%; left: -13.7%; top: 0; object-fit: cover; }
-.about-background--map { opacity: 0; background: var(--about-black); }
-.about-background--map img { width: 114.8%; height: 101.35%; left: -8.06%; top: -1.35%; opacity: 0.13; object-fit: cover; }
 .about-gallery { position: absolute; top: calc(var(--nav-height) + var(--about-image-top-gap)); bottom: var(--about-image-bottom-gap); right: var(--content-inline); width: 53.203125%; display: grid; grid-template-rows: minmax(0, 1fr); grid-template-columns: minmax(0, 1fr); place-items: center; opacity: var(--about-content-opacity, 1); }
 .about-gallery::after { content: ""; position: absolute; inset: 0; z-index: 1; background: var(--about-image-overlay); opacity: var(--image-overlay-opacity, 0); pointer-events: none; }
 .about-photo { grid-area: 1 / 1; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; }

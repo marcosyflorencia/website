@@ -3,7 +3,6 @@ import { aboutChapters as chapters } from '../../data/about.js'
 import IntroductionMedia from '../media/IntroductionMedia.jsx'
 import Button from '../ui/Button.jsx'
 import texture from '../../assets/about-texture.png'
-import map from '../../assets/about-map.png'
 import './about.css'
 
 const ABOUT_CAPTION = 'Tango is more than performance. It is a way to connect and communicate through the embrace.'
@@ -13,7 +12,6 @@ export default function AboutSection() {
   const chapterRefs = useRef([])
   const imageRefs = useRef([])
   const galleryRef = useRef(null)
-  const mapLayer = useRef(null)
   const stage = useRef(null)
   const textColumn = useRef(null)
   const [activeChapter, setActiveChapter] = useState(0)
@@ -66,7 +64,6 @@ export default function AboutSection() {
       const darkness = Math.min(1, Math.min(blend, 1 - blend) / 0.45)
       const easedDarkness = darkness * darkness * (3 - 2 * darkness)
       galleryRef.current.style.setProperty('--image-overlay-opacity', String(easedDarkness))
-      mapLayer.current.style.opacity = Math.max(0, Math.min(1, index - 1 + blend))
       const captionStart = (chapters.length - 1) * step + 160
       const captionOpacity = ease((travel - captionStart) / 200)
       stage.current.style.setProperty('--about-caption-opacity', String(captionOpacity))
@@ -109,7 +106,6 @@ export default function AboutSection() {
     <section ref={root} className="about" id="about" aria-labelledby="about-title" tabIndex={-1} style={{ '--about-scroll-distance': `${scrollDistance}px` }}>
         <div ref={stage} className="about-stage">
           <div className="about-background about-background--texture"><img src={texture} alt="" /></div>
-          <div ref={mapLayer} className="about-background about-background--map"><img src={map} alt="" /></div>
         <div ref={galleryRef} className="about-gallery" aria-hidden="true">
           {chapters.map((chapter, index) => (
             <div key={chapter.id} ref={element => { imageRefs.current[index] = element }} className="about-photo">
