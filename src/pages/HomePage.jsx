@@ -5,7 +5,6 @@ import LearningSection from '../components/sections/LearningSection.jsx'
 import EventsSection from '../components/sections/EventsSection.jsx'
 import QuestionsSection from '../components/sections/QuestionsSection.jsx'
 import ContactSection from '../components/sections/ContactSection.jsx'
-import SiteFooter from '../components/layout/SiteFooter.jsx'
 import scrollToSection from '../utils/scrollToSection.js'
 
 export default function HomePage() {
@@ -20,7 +19,6 @@ export default function HomePage() {
         <QuestionsSection />
         <ContactSection />
       </main>
-      <SiteFooter />
     </>
   )
 }

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import ContactForm from '../forms/ContactForm.jsx'
+import SiteFooter from '../layout/SiteFooter.jsx'
 import hero from '../../assets/hero_img.png'
 import './contact.css'
 
@@ -53,6 +54,7 @@ export default function ContactSection() {
           <ContactForm />
         </div>
       </div>
+      <SiteFooter />
     </section>
   )
 }
