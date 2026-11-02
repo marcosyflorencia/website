@@ -43,11 +43,11 @@ export default function HeroSection() {
   return (
     <div className="hero-space" id="home">
       <section className="landing" ref={heroRef} aria-label={copy.sectionLabel}>
-        <img className="hero-image" src={hero} alt={copy.imageAlt} fetchPriority="high" />
+        <img className="hero-image" src={hero} alt="Marcos and Florencia dancing Argentine tango" fetchPriority="high" />
         <div className="hero-nav-space" aria-hidden="true" />
         <div className="hero-content">
           <HeroLabel />
-          <h1><img src={wordmark} alt={copy.wordmarkAlt} width="623" height="167" /></h1>
+          <h1><img src={wordmark} alt="Marcos & Florencia" width="623" height="167" /></h1>
           <p className="introduction">
             {copy.statementLines.map((line, index) => <span key={line}>{line}{index < copy.statementLines.length - 1 && <br />}</span>)}
           </p>

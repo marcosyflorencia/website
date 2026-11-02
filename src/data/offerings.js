@@ -8,13 +8,13 @@ export const featuredOffering = {
   id: 'private',
   image: privateClass,
   ...siteCopy.learning.featuredOffering,
-  alt: siteCopy.learning.featuredOffering.imageAlt,
+  alt: 'Marcos and Florencia welcoming students',
 }
 
 const offeringCopy = siteCopy.learning.classOfferings
 
 export const classOfferings = [
-  { id: 'practica', image: practica, ...offeringCopy.practica, alt: offeringCopy.practica.imageAlt },
-  { id: 'milonga', image: milonga, ...offeringCopy.milonga, alt: offeringCopy.milonga.imageAlt },
-  { id: 'group', image: groupClass, ...offeringCopy.group, alt: offeringCopy.group.imageAlt },
+  { id: 'practica', image: practica, ...offeringCopy.practica, alt: 'Marcos and Florencia leading a group practice' },
+  { id: 'milonga', image: milonga, ...offeringCopy.milonga, alt: 'Marcos and Florencia at a lively milonga' },
+  { id: 'group', image: groupClass, ...offeringCopy.group, alt: 'Marcos and Florencia demonstrating a tango embrace' },
 ]

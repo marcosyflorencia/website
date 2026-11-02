@@ -4,8 +4,6 @@
 
 introduction:
   sectionLabel: Introduction
-  imageAlt: Marcos and Florencia dancing Argentine tango
-  wordmarkAlt: Marcos & Florencia
   eyebrowLabels:
     - ARGENTINE TANGO ARTISTS
     - NYC-BASED TEACHERS
@@ -22,22 +20,18 @@ introduction:
       - title: ""
         body: |
           Born in Argentina, the birthplace of tango, Marcos and Florencia have studied with maestros and milongueros since their teenage years.
-        imageAlt: Marcos and Florencia sharing a tango embrace in Buenos Aires
 
       - title: Buenos Aires Recognition 2015
         body: |
           Their partnership quickly earned recognition in tango’s birthplace. In 2015, they placed 2nd in the Buenos Aires City Tango Championship, one of the world’s most respected tango competitions.
-        imageAlt: Marcos and Florencia celebrating their Buenos Aires championship recognition
 
       - title: "World Championship Finalists: 2017–2023"
         body: |
           Over the years, Marcos and Florencia have carried Argentine tango across the world, teaching and performing at major festivals, cultural events, and stage productions. They have been finalists many times in the World Tango Championship’s Tango de Pista (Salon) category.
-        imageAlt: Marcos and Florencia performing Argentine tango
 
       - title: Present, New York
         body: |
           New York City is now their home. They share Argentine tango with an international audience in New York. In 2025, their dedication was recognized by the U.S. Congress and the Argentine Civic Committee.
-        imageAlt: Marcos and Florencia holding their recognition certificates in New York
 
 learning:
   sectionLabel: Learning Tango
@@ -46,7 +40,6 @@ learning:
   actionDestinationTitle: Contact section — destination placeholder
   featuredOffering:
     title: Learning Tango
-    imageAlt: Marcos and Florencia welcoming students
     description: |
       Private lessons with Marcos and Florencia are tailored to your needs and available in Manhattan or Brooklyn. Inquire about pricing, location, and scheduling.
     note: Packages available.
@@ -54,21 +47,18 @@ learning:
   classOfferings:
     practica:
       title: Guided Practica
-      imageAlt: Marcos and Florencia leading a group practice
       schedule: "Mondays, 6:30PM - 9:30PM"
       description: |
         Beginner-friendly practica at Ripley-Grier Midtown. Join the WhatsApp group for schedule updates, changes, or cancellations.
       action: Join WhatsApp Group
     milonga:
       title: Milonga
-      imageAlt: Marcos and Florencia at a lively milonga
       schedule: Fridays, 9 PM-1 AM
       description: |
         Every Friday at Ukrainian East Village Restaurant. Experience tango in its authentic social setting.
       action: Purchase ticket
     group:
       title: Intermediate Group Class
-      imageAlt: Marcos and Florencia demonstrating a tango embrace
       schedule: "Fridays, 8:00 PM - 9:00 PM"
       description: |
         Group class for intermediate dancers before milonga. Join the WhatsApp group for the most current class information.
