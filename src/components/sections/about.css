@@ -20,7 +20,7 @@
 .about-title { margin: 0; color: var(--about-heading); font: var(--font-weight-bold) var(--font-size-title-big)/var(--line-height-title-big) var(--font-heading); }
 .about-chapter-dots { position: absolute; top: 50%; right: calc(100% + 0.5rem); display: flex; flex-direction: column; align-items: center; transform: translateY(-50%); }
 .about-chapter-dot { width: 2rem; height: 2rem; display: grid; place-items: center; padding: 0; border: 0; background: transparent; color: inherit; }
-.about-chapter-dot::before { content: ''; width: 1px; height: 0.875rem; border: 0; border-radius: 0; background: currentColor; opacity: 0.65; transition: transform 160ms, background-color 160ms, opacity 160ms; }
+.about-chapter-dot::before { content: ''; width: 2px; height: 0.875rem; border: 0; border-radius: 0; background: currentColor; opacity: 0.65; transition: transform 160ms, background-color 160ms, opacity 160ms; }
 .about-chapter-dot[data-complete="true"]::before { background: currentColor; opacity: 0.55; }
 .about-chapter-dot[aria-current="step"]::before { background: var(--color-accent); opacity: 1; transform: scaleY(1.35); }
 .about-chapter-dot:hover::before { opacity: 1; transform: scaleY(1.25); }
