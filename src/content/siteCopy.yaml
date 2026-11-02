@@ -23,32 +23,44 @@ introduction:
       mediaUrl: /media/introduction/about_img_4.png
 
 learning:
+  title: Learning Tango
   actionDestinationTitle: Contact section — destination placeholder
-  featuredOffering:
-    title: Learning Tango
-    description: |
-      Private lessons with Marcos and Florencia are tailored to your needs and available in Manhattan or Brooklyn. Inquire about pricing, location, and scheduling.
-    note: Packages available.
-    action: Send Inquiry
-  classOfferings:
-    practica:
+  offerings:
+    - id: private
+      title: Private lessons with Marcos and Florencia
+      description: |
+        Classes are tailored to your needs and available in Manhattan or Brooklyn. Inquire about pricing, location, and scheduling.
+      note: Packages available.
+      action: Book your private class
+      images:
+        - /media/learning/private-class.png
+
+    - id: practica
       title: Guided Practica
       schedule: "Mondays, 6:30PM - 9:30PM"
       description: |
         Beginner-friendly practica at Ripley-Grier Midtown. Join the WhatsApp group for schedule updates, changes, or cancellations.
       action: Join WhatsApp Group
-    milonga:
+      images:
+        - /media/learning/practica.png
+
+    - id: milonga
       title: Milonga
       schedule: Fridays, 9 PM-1 AM
       description: |
         Every Friday at Ukrainian East Village Restaurant. Experience tango in its authentic social setting.
       action: Purchase ticket
-    group:
+      images:
+        - /media/learning/milonga.png
+
+    - id: group
       title: Intermediate Group Class
       schedule: "Fridays, 8:00 PM - 9:00 PM"
       description: |
         Group class for intermediate dancers before milonga. Join the WhatsApp group for the most current class information.
       action: Join WhatsApp Group
+      images:
+        - /media/learning/group-class.png
 
 hiring:
   title: Hiring For Events

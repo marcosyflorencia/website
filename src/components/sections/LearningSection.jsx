@@ -1,15 +1,19 @@
 import OfferingCard from '../learning/OfferingCard.jsx'
-import { classOfferings, featuredOffering } from '../../data/offerings.js'
+import { siteCopy } from '../../content/siteCopy.js'
 import './learning.css'
 
 export default function LearningSection({ onAction }) {
+  const offerings = Array.isArray(siteCopy.learning.offerings) ? siteCopy.learning.offerings : []
+
   return (
-    <section id="learning" className="learning" tabIndex={-1} aria-label="Learning Tango">
+    <section id="learning" className="learning" tabIndex={-1} aria-labelledby="learning-title">
       <div className="learning-class-reveal">
         <div className="learning-inner">
-          <OfferingCard offering={featuredOffering} featured onAction={onAction} />
-          <div className="offering-grid">
-            {classOfferings.map(offering => <OfferingCard key={offering.id} offering={offering} onAction={onAction} />)}
+          <h2 id="learning-title" className="learning-title">{siteCopy.learning.title}</h2>
+          <div className="offering-list">
+            {offerings.map((offering, index) => (
+              <OfferingCard key={offering.id ?? index} offering={offering} index={index} onAction={onAction} />
+            ))}
           </div>
         </div>
       </div>
