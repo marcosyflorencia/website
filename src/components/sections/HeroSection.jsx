@@ -4,9 +4,11 @@ import HeroLabel from './HeroLabel.jsx'
 import scrollToSection from '../../utils/scrollToSection.js'
 import hero from '../../assets/hero_img.png'
 import wordmark from '../../assets/wordmark.svg'
+import { siteCopy } from '../../content/siteCopy.ts'
 
 export default function HeroSection() {
   const heroRef = useRef(null)
+  const copy = siteCopy.introduction
 
   useEffect(() => {
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -40,20 +42,18 @@ export default function HeroSection() {
 
   return (
     <div className="hero-space" id="home">
-      <section className="landing" ref={heroRef} aria-label="Introduction">
-        <img className="hero-image" src={hero} alt="Marcos and Florencia dancing Argentine tango" fetchPriority="high" />
+      <section className="landing" ref={heroRef} aria-label={copy.sectionLabel}>
+        <img className="hero-image" src={hero} alt={copy.imageAlt} fetchPriority="high" />
         <div className="hero-nav-space" aria-hidden="true" />
         <div className="hero-content">
           <HeroLabel />
-          <h1><img src={wordmark} alt="Marcos & Florencia" width="623" height="167" /></h1>
+          <h1><img src={wordmark} alt={copy.wordmarkAlt} width="623" height="167" /></h1>
           <p className="introduction">
-            From Argentina,<br />
-            For Everyone,<br />
-            Through Connection.
+            {copy.statementLines.map((line, index) => <span key={line}>{line}{index < copy.statementLines.length - 1 && <br />}</span>)}
           </p>
           <div className="actions">
-            <Button onClick={() => scrollToSection('learning')}>Start your journey</Button>
-            <Button variant="secondary" onClick={() => scrollToSection('events')}>Hire for events</Button>
+            <Button onClick={() => scrollToSection('learning')}>{copy.primaryAction}</Button>
+            <Button variant="secondary" onClick={() => scrollToSection('events')}>{copy.secondaryAction}</Button>
           </div>
         </div>
       </section>

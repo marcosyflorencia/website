@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { aboutChapters as chapters } from '../../data/about.js'
 import texture from '../../assets/about-texture.png'
 import map from '../../assets/about-map.png'
+import { siteCopy } from '../../content/siteCopy.ts'
 import './about.css'
 
 export default function AboutSection() {
@@ -72,7 +73,7 @@ export default function AboutSection() {
       <div ref={stage} className="about-stage">
         <div className="about-background about-background--texture"><img src={texture} alt="" /></div>
         <div ref={mapLayer} className="about-background about-background--map"><img src={map} alt="" /></div>
-        <h2 className="about-title" id="about-title">About Us</h2>
+        <h2 className="about-title" id="about-title">{siteCopy.introduction.about.title}</h2>
         <div ref={galleryRef} className="about-gallery" aria-hidden="true">
           {chapters.map((chapter, index) => (
             <div key={chapter.title || chapter.body} ref={element => { imageRefs.current[index] = element }} className={`about-photo about-photo--${index + 1}`}>

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import OfferingCard from '../learning/OfferingCard.jsx'
 import { classOfferings, featuredOffering } from '../../data/offerings.js'
+import { siteCopy } from '../../content/siteCopy.ts'
 import './learning.css'
 
 export default function LearningSection({ onAction }) {
@@ -44,11 +45,11 @@ export default function LearningSection({ onAction }) {
     }
   }, [])
   return (
-    <section ref={sectionRef} id="learning" className="learning" tabIndex={-1} aria-label="Learning Tango">
+    <section ref={sectionRef} id="learning" className="learning" tabIndex={-1} aria-label={siteCopy.learning.sectionLabel}>
       <div className="learning-quote-band">
         <blockquote className="learning-quote">
           <span className="learning-quote-mark" aria-hidden="true">“</span>
-          <p>Tango is more than performance. It is a way to connect and communicate through the embrace.</p>
+          <p>{siteCopy.learning.quote}</p>
         </blockquote>
       </div>
       <div className="learning-class-reveal">

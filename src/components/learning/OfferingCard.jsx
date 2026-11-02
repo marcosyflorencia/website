@@ -1,4 +1,5 @@
 import Button from '../ui/Button.jsx'
+import { siteCopy } from '../../content/siteCopy.ts'
 
 export default function OfferingCard({ offering, featured = false, onAction }) {
   const Heading = featured ? 'h2' : 'h3'
@@ -12,7 +13,7 @@ export default function OfferingCard({ offering, featured = false, onAction }) {
         {offering.schedule && <p className="offering-schedule">{offering.schedule}</p>}
         <p className="offering-description">{offering.description}{offering.detail && <><br />{offering.detail}</>}</p>
         {offering.note && <p className="offering-note">{offering.note}</p>}
-        <Button variant={featured ? 'primary' : 'secondary'} onClick={() => onAction?.(offering.id)} title="Contact section — destination placeholder">{offering.action}</Button>
+        <Button variant={featured ? 'primary' : 'secondary'} onClick={() => onAction?.(offering.id)} title={siteCopy.learning.actionDestinationTitle}>{offering.action}</Button>
       </div>
     </article>
   )
