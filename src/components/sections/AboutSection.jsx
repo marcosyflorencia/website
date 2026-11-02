@@ -85,10 +85,11 @@ export default function AboutSection() {
   const scrollDistance = Math.max(0, (chapters.length - 1) * 320 + 440)
 
   return (
-    <section ref={root} className="about" id="about" aria-label="About us" tabIndex={-1} style={{ '--about-scroll-distance': `${scrollDistance}px` }}>
+    <section ref={root} className="about" id="about" aria-labelledby="about-title" tabIndex={-1} style={{ '--about-scroll-distance': `${scrollDistance}px` }}>
       <div ref={stage} className="about-stage">
         <div className="about-background about-background--texture"><img src={texture} alt="" /></div>
         <div ref={mapLayer} className="about-background about-background--map"><img src={map} alt="" /></div>
+        <h2 className="about-title" id="about-title">About Us</h2>
         <div ref={galleryRef} className="about-gallery" aria-hidden="true">
           {chapters.map((chapter, index) => (
             <div key={chapter.id} ref={element => { imageRefs.current[index] = element }} className="about-photo">

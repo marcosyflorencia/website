@@ -7,7 +7,7 @@ Edit `siteCopy.yaml` to update the introduction, About section, Learning Tango o
 Change only the text after the colon:
 
 ```yaml
-title: About Us
+note: Packages available.
 ```
 
 ## Longer paragraphs
