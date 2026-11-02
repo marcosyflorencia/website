@@ -21,15 +21,22 @@ description: |
 
 ## Introduction chapters
 
-Each chapter has only a description and photo URL. Each dash starts a new chapter:
+Each chapter has only a description and media URL. Each dash starts a new chapter:
 
 ```yaml
 chapters:
   - description: |
       Write the chapter paragraph here.
-    photoUrl: /images/about/example.jpg
+    mediaUrl: /media/introduction/example.jpg
 ```
 
-Add or remove as many chapter items as needed. The page adjusts its scroll length automatically. A photo can use a full external URL beginning with `https://`, or a local path for an image stored in `public/images/about`.
+Add or remove as many chapter items as needed. The page adjusts its scroll length automatically.
 
-Do not rename fields such as `introduction`, `chapters`, `description`, `photoUrl`, `id`, or `answer`; the website uses those names to place the copy correctly.
+`mediaUrl` supports:
+
+- Images such as `.jpg`, `.png`, `.webp`, and `.gif`
+- Direct videos such as `.mp4`, `.webm`, `.mov`, and `.m4v`
+- Full YouTube or Vimeo links
+- Local files stored in `public/media/introduction`, referenced as `/media/introduction/filename.ext`
+
+Do not rename fields such as `introduction`, `chapters`, `description`, `mediaUrl`, `id`, or `answer`; the website uses those names to place the copy correctly.

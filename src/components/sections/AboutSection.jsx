@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { aboutChapters as chapters } from '../../data/about.js'
+import IntroductionMedia from '../media/IntroductionMedia.jsx'
 import texture from '../../assets/about-texture.png'
 import map from '../../assets/about-map.png'
 import './about.css'
@@ -80,7 +81,7 @@ export default function AboutSection() {
         <div ref={galleryRef} className="about-gallery" aria-hidden="true">
           {chapters.map((chapter, index) => (
             <div key={chapter.id} ref={element => { imageRefs.current[index] = element }} className="about-photo">
-              <img src={chapter.photoUrl} alt="" />
+              <IntroductionMedia url={chapter.mediaUrl} />
             </div>
           ))}
         </div>
@@ -90,7 +91,7 @@ export default function AboutSection() {
             <div className="about-copy">
               <p>{chapter.description}</p>
             </div>
-            <img className="about-inline-image" src={chapter.photoUrl} alt="" loading="lazy" />
+            <IntroductionMedia url={chapter.mediaUrl} inline />
           </article>
         ))}
       </div>

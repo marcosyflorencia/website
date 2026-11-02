@@ -6,19 +6,19 @@ introduction:
   chapters:
     - description: |
         Born in Argentina, the birthplace of tango, Marcos and Florencia have studied with maestros and milongueros since their teenage years.
-      photoUrl: /images/about/about_img_1.png
+      mediaUrl: /media/introduction/about_img_1.png
 
     - description: |
-        Their partnership quickly earned recognition in tango’s birthplace. In 2015, they placed 2nd in the Buenos Aires City Tango Championship, one of the world’s most respected tango competitions.
-      photoUrl: /images/about/about_img_2.png
+       In 2015, they earned second place at the prestigious Buenos Aires City Tango Championship.
+      mediaUrl: /media/introduction/about_img_2.png
 
     - description: |
-        Over the years, Marcos and Florencia have carried Argentine tango across the world, teaching and performing at major festivals, cultural events, and stage productions. They have been finalists many times in the World Tango Championship’s Tango de Pista (Salon) category.
-      photoUrl: /images/about/about_img_3.png
+       From 2017 to 2023, they performed worldwide and were multiple-time World Tango Championship finalists.
+      mediaUrl: /media/introduction/about_img_3.png
 
     - description: |
-        New York City is now their home. They share Argentine tango with an international audience in New York. In 2025, their dedication was recognized by the U.S. Congress and the Argentine Civic Committee.
-      photoUrl: /images/about/about_img_4.png
+       Recognized by the U.S. Congress for their dedication to tango, they are now based in New York City, teaching and performing across the US.
+      mediaUrl: /media/introduction/about_img_4.png
 
 learning:
   quote: |
