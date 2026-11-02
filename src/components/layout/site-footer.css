@@ -1,42 +1,40 @@
 .site-footer {
   position: relative;
   z-index: 30;
-  padding: clamp(3rem, 5vw, 4rem) max(1.5rem, 5.625vw) 1.75rem;
-  background: var(--color-wine);
+  width: min(100%, 30rem);
+  margin-right: auto;
+  padding: clamp(2rem, 4vw, 3rem) 1.5rem 2rem max(1.5rem, 5.625vw);
+  background: transparent;
   color: var(--color-cream);
 }
 
 .footer-main {
   display: grid;
-  grid-template-columns: minmax(16rem, 1fr) minmax(12rem, 0.55fr);
-  gap: clamp(3rem, 8vw, 8rem);
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.75rem;
   align-items: start;
-  min-height: 22rem;
-  padding-bottom: 3.5rem;
+  min-height: 0;
+  padding-bottom: 2rem;
 }
 
-.footer-wordmark { display: block; width: min(100%, 26rem); line-height: 0; }
+.footer-wordmark { display: block; width: min(100%, 12rem); line-height: 0; }
 .footer-wordmark img { display: block; width: 100%; height: auto; }
 
-.footer-navigation { display: grid; gap: 1.25rem; justify-items: start; }
-.footer-navigation a { font-family: var(--font-nav); font-size: var(--font-size-title-big); line-height: 1.2; text-decoration: none; text-transform: uppercase; }
+.footer-navigation { display: grid; gap: 0.5rem; justify-items: start; }
+.footer-navigation a { font-family: var(--font-nav); font-size: var(--font-size-body-bg); line-height: 1.25; text-decoration: none; text-transform: uppercase; }
 .footer-navigation a:hover { color: var(--color-accent); }
 
 .footer-meta {
-  padding-top: 1.75rem;
+  padding-top: 1rem;
   border-top: 1px solid rgb(255 244 231 / 35%);
   color: rgb(255 244 231 / 65%);
-  font-size: var(--font-size-body-large);
+  font-size: var(--font-size-body-small);
   font-weight: var(--font-weight-bold);
   line-height: 1.4;
 }
 .footer-meta p { margin: 0; }
 
 @media (max-width: 700px) {
-  .site-footer { padding-top: 2.25rem; }
-  .footer-main { grid-template-columns: 1fr; gap: 2.5rem; min-height: 0; padding-bottom: 3rem; }
-  .footer-wordmark { width: min(100%, 20rem); }
-  .footer-navigation { gap: 1rem; }
-  .footer-navigation a { font-size: var(--font-size-title-medium); }
-  .footer-meta { font-size: var(--font-size-body-bg); }
+  .site-footer { width: min(100%, 24rem); padding: 2rem 1.5rem; }
+  .footer-wordmark { width: min(100%, 10rem); }
 }
