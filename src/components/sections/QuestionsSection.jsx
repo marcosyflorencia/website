@@ -2,22 +2,13 @@ import Accordion from '../ui/Accordion.jsx'
 import { siteCopy } from '../../content/siteCopy.js'
 import './questions.css'
 
-const questions = siteCopy.faq.items.map(item => ({
-  ...item,
-  answer: typeof item.answer === 'string' ? <p>{item.answer}</p> : <>
-    <p>{item.answer.introduction}</p>
-    <ul>
-      {item.answer.styles.map(style => <li key={style.name}><strong>{style.name}</strong> {style.description}</li>)}
-    </ul>
-    <p>{item.answer.conclusion}</p>
-  </>,
-}))
+const FAQ_TITLE = 'Q&A'
 
 export default function QuestionsSection() {
   return <section className="questions" id="questions" tabIndex={-1} aria-labelledby="questions-title">
     <div className="questions-inner">
-      <h2 id="questions-title">{siteCopy.faq.title}</h2>
-      <Accordion items={questions} />
+      <h2 id="questions-title">{FAQ_TITLE}</h2>
+      <Accordion items={siteCopy.faq.items} />
     </div>
   </section>
 }

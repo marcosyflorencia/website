@@ -63,37 +63,29 @@ hiring:
       videoUrl: https://www.youtube.com/watch?v=DBRWDRs3u5A
 
 faq:
-  title: Q&A
   items:
-    - id: styles
-      question: What tango styles are there?
-      answer:
-        introduction: |
-          Argentine tango has several approaches, with plenty of overlap between them:
-        styles:
-          - name: "Tango salón:"
-            description: Social tango danced at milongas, emphasizing connection, musicality, and moving comfortably around a shared dance floor.
-          - name: "Milonguero style:"
-            description: Usually danced in a close embrace with compact movements, especially suited to a crowded floor.
-          - name: "Tango nuevo:"
-            description: An exploratory approach that plays with movement, space, and changes in the embrace.
-          - name: "Stage tango:"
-            description: Choreographed for an audience, often featuring dramatic movements, lifts, and theatrical expression.
-        conclusion: |
-          You may also hear about vals and milonga. These are related musical and dance forms enjoyed alongside tango: vals has a lilting three-beat rhythm, while milonga often has a brisk, playful feel.
+    - question: What tango styles are there?
+      answer: |
+        Argentine tango has several approaches, with plenty of overlap between them:
 
-    - id: beginners
-      question: Can I join if I have never danced tango?
+        Tango salón: Social tango danced at milongas, emphasizing connection, musicality, and moving comfortably around a shared dance floor.
+
+        Milonguero style: Usually danced in a close embrace with compact movements, especially suited to a crowded floor.
+
+        Tango nuevo: An exploratory approach that plays with movement, space, and changes in the embrace.
+
+        Stage tango: Choreographed for an audience, often featuring dramatic movements, lifts, and theatrical expression.
+
+        You may also hear about vals and milonga. These are related musical and dance forms enjoyed alongside tango: vals has a lilting three-beat rhythm, while milonga often has a brisk, playful feel.
+
+    - question: Can I join if I have never danced tango?
       answer: Details about beginner lessons and getting started will be added here soon.
 
-    - id: partner
-      question: Do I need to bring a partner?
+    - question: Do I need to bring a partner?
       answer: Partner requirements for private lessons and group classes will be added here soon.
 
-    - id: wear
-      question: What should I wear to class?
+    - question: What should I wear to class?
       answer: Clothing and footwear guidance will be added here soon.
 
-    - id: booking
-      question: How do I book a lesson or an event?
+    - question: How do I book a lesson or an event?
       answer: Booking steps, availability, and inquiry details will be added here soon.

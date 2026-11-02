@@ -17,11 +17,7 @@
 .accordion-trigger[aria-expanded="true"] { color: var(--color-accent); }
 .accordion-icon { flex-shrink: 0; width: 1.5rem; text-align: center; font-size: var(--font-size-title-medium); font-weight: var(--font-weight-light); }
 .accordion-panel { max-width: 58rem; padding: 0 2.5rem 1.75rem 0; font-size: var(--font-size-body-bg); font-weight: var(--font-weight-light); line-height: var(--line-height-body); }
-.accordion-panel p { margin: 0 0 1rem; }
-.accordion-panel p:last-child { margin-bottom: 0; }
-.accordion-panel ul { margin: 0 0 1rem; padding-left: 1.25rem; }
-.accordion-panel li + li { margin-top: 0.75rem; }
-.accordion-panel strong { font-weight: var(--font-weight-medium); }
+.accordion-panel p { margin: 0; white-space: pre-line; }
 @media (max-width: 600px) {
   .questions { padding: 3rem 1.5rem 5rem; }
   .accordion-panel { padding-right: 0; }
