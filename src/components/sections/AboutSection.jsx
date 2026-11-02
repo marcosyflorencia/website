@@ -22,7 +22,6 @@ export default function AboutSection() {
     const update = () => {
       frame = 0
       if (motion.matches) {
-        stage.current.style.opacity = ''
         stage.current.style.removeProperty('--about-caption-opacity')
         stage.current.style.removeProperty('--about-content-opacity')
         textColumn.current.inert = false
@@ -66,8 +65,6 @@ export default function AboutSection() {
       stage.current.style.setProperty('--about-content-opacity', String(1 - captionOpacity))
       textColumn.current.inert = captionOpacity > 0.5
       textColumn.current.setAttribute('aria-hidden', String(captionOpacity > 0.5))
-      // Fade the complete stage as Learning Tango enters from below.
-      stage.current.style.opacity = String(1 - Math.max(0, Math.min(1, (window.innerHeight - rect.bottom) / 160)))
     }
     const schedule = () => { if (!frame) frame = requestAnimationFrame(update) }
     window.addEventListener('scroll', schedule, { passive: true })
