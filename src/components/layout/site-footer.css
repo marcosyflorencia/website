@@ -1,7 +1,7 @@
 .site-footer {
   position: relative;
   z-index: 30;
-  width: min(100%, 30rem);
+  width: min(100%, 48rem);
   margin-right: auto;
   padding: clamp(2rem, 4vw, 3rem) 1.5rem 2rem max(1.5rem, 5.625vw);
   background: transparent;
@@ -10,8 +10,8 @@
 
 .footer-main {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 1.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 5vw, 4rem);
   align-items: start;
   min-height: 0;
   padding-bottom: 2rem;
@@ -34,7 +34,8 @@
 }
 .footer-meta p { margin: 0; }
 
-@media (max-width: 700px) {
-  .site-footer { width: min(100%, 24rem); padding: 2rem 1.5rem; }
+@media (max-width: 560px) {
+  .site-footer { width: 100%; padding: 2rem 1.5rem; }
+  .footer-main { grid-template-columns: minmax(0, 1fr); gap: 1.75rem; }
   .footer-wordmark { width: min(100%, 10rem); }
 }
