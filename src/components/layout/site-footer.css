@@ -1,7 +1,7 @@
 .site-footer {
   position: relative;
   z-index: 30;
-  padding: 2.75rem max(1.5rem, 5.625vw) 1.5rem;
+  padding: 2.75rem var(--content-inline) 1.5rem;
   border-top: 1px solid var(--color-accent);
   background: var(--color-wine);
   color: var(--color-cream);

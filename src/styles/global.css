@@ -3,6 +3,7 @@
 
 :root {
   --nav-height: 5.6875rem;
+  --content-inline: clamp(1.5rem, 4.4vw, 5.625rem);
   --nav-overlay: rgb(0 0 0 / 50%);
   --hero-unit: 1vw;
   --color-cream: #fff4e7;
@@ -63,7 +64,7 @@ h1 img { width: 100%; height: auto; }
 .actions { display: flex; gap: calc(1.875 * var(--hero-unit)); align-items: center; }
 html { scroll-behavior: smooth; }
 .page-sections > section { scroll-margin-top: var(--nav-height); }
-.page-section { min-height: 55svh; padding: 5rem max(1.5rem, 9.140625vw); border-top: 1px solid var(--color-accent); }
+.page-section { min-height: 55svh; padding: 5rem var(--content-inline); border-top: 1px solid var(--color-accent); }
 .page-section:focus { outline: none; }
 .page-section h2 { font: var(--font-weight-regular) var(--font-size-title-big)/var(--line-height-title-big) var(--font-nav); margin: 0 0 1rem; }
 .page-section p { font-weight: var(--font-weight-light); font-size: var(--font-size-body-bg); line-height: 1.6; margin: 0 0 2rem; }
