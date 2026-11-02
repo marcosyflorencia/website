@@ -2,7 +2,7 @@ import OfferingCard from '../learning/OfferingCard.jsx'
 import { siteCopy } from '../../content/siteCopy.js'
 import './learning.css'
 
-export default function LearningSection({ onAction }) {
+export default function LearningSection() {
   const offerings = Array.isArray(siteCopy.learning.offerings) ? siteCopy.learning.offerings : []
 
   return (
@@ -12,7 +12,7 @@ export default function LearningSection({ onAction }) {
           <h2 id="learning-title" className="learning-title">{siteCopy.learning.title}</h2>
           <div className="offering-list">
             {offerings.map((offering, index) => (
-              <OfferingCard key={index} offering={offering} index={index} onAction={onAction} />
+              <OfferingCard key={index} offering={offering} index={index} />
             ))}
           </div>
         </div>

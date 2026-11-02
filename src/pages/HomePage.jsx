@@ -15,7 +15,7 @@ export default function HomePage() {
       <HeroSection />
       <main className="page-sections">
         <AboutSection />
-        <LearningSection onAction={() => scrollToSection('contact')} />
+        <LearningSection />
         <EventsSection onInquiry={() => scrollToSection('contact')} />
         <QuestionsSection />
         <ContactSection />

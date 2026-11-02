@@ -26,8 +26,6 @@ learning:
     - title: Private lessons with Marcos and Florencia
       description: |
         Classes are tailored to your needs and available in Manhattan or Brooklyn. Inquire about pricing, location, and scheduling.
-      note: Packages available.
-      action: Book your private class
       images:
         - /media/learning/private-class.png
 
@@ -35,7 +33,6 @@ learning:
       schedule: "Mondays, 6:30PM - 9:30PM"
       description: |
         Beginner-friendly practica at Ripley-Grier Midtown. Join the WhatsApp group for schedule updates, changes, or cancellations.
-      action: Join WhatsApp Group
       images:
         - /media/learning/practica.png
 
@@ -43,7 +40,6 @@ learning:
       schedule: Fridays, 9 PM-1 AM
       description: |
         Every Friday at Ukrainian East Village Restaurant. Experience tango in its authentic social setting.
-      action: Purchase ticket
       images:
         - /media/learning/milonga.png
 
