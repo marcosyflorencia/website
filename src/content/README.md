@@ -24,6 +24,8 @@ description: |
 Each chapter has only a description and media URL. Each dash starts a new chapter:
 
 ```yaml
+caption: |
+  Write the About section caption here.
 chapters:
   - description: |
       Write the chapter paragraph here.

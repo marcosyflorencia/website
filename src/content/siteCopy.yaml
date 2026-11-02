@@ -3,6 +3,8 @@
 # Use the | character for paragraphs that span more than one line.
 
 introduction:
+  caption: |
+    Tango is more than performance. It is a way to connect and communicate through the embrace.
   chapters:
     - description: |
         Born in Argentina, the birthplace of tango, Marcos and Florencia have studied with maestros and milongueros since their teenage years.
@@ -21,8 +23,6 @@ introduction:
       mediaUrl: /media/introduction/about_img_4.png
 
 learning:
-  quote: |
-    Tango is more than performance. It is a way to connect and communicate through the embrace.
   actionDestinationTitle: Contact section — destination placeholder
   featuredOffering:
     title: Learning Tango

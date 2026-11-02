@@ -3,6 +3,7 @@ import { aboutChapters as chapters } from '../../data/about.js'
 import IntroductionMedia from '../media/IntroductionMedia.jsx'
 import texture from '../../assets/about-texture.png'
 import map from '../../assets/about-map.png'
+import { siteCopy } from '../../content/siteCopy.js'
 import './about.css'
 
 export default function AboutSection() {
@@ -21,6 +22,8 @@ export default function AboutSection() {
       frame = 0
       if (motion.matches) {
         stage.current.style.opacity = ''
+        stage.current.style.removeProperty('--about-caption-opacity')
+        stage.current.style.removeProperty('--about-content-opacity')
         chapterRefs.current.forEach(chapter => {
           chapter.style.opacity = ''
           chapter.style.transform = ''
@@ -31,6 +34,10 @@ export default function AboutSection() {
       const rect = root.current.getBoundingClientRect()
       const travel = Math.max(0, -rect.top)
       const step = 320
+      const ease = value => {
+        const t = Math.min(1, Math.max(0, value))
+        return t * t * (3 - 2 * t)
+      }
       const progress = Math.min(chapters.length - 1, travel / step)
       const index = Math.floor(progress)
       // Space the moving chapters by their measured height so their text never overlaps.
@@ -53,6 +60,10 @@ export default function AboutSection() {
       const easedDarkness = darkness * darkness * (3 - 2 * darkness)
       galleryRef.current.style.setProperty('--image-overlay-opacity', String(easedDarkness))
       mapLayer.current.style.opacity = Math.max(0, Math.min(1, index - 1 + blend))
+      const captionStart = (chapters.length - 1) * step + 160
+      const captionOpacity = ease((travel - captionStart) / 200)
+      stage.current.style.setProperty('--about-caption-opacity', String(captionOpacity))
+      stage.current.style.setProperty('--about-content-opacity', String(1 - captionOpacity))
       // Fade the complete stage as Learning Tango enters from below.
       stage.current.style.opacity = String(1 - Math.max(0, Math.min(1, (window.innerHeight - rect.bottom) / 160)))
     }
@@ -71,7 +82,7 @@ export default function AboutSection() {
 
   if (!chapters.length) return null
 
-  const scrollDistance = Math.max(0, (chapters.length - 1) * 320 + 60)
+  const scrollDistance = Math.max(0, (chapters.length - 1) * 320 + 440)
 
   return (
     <section ref={root} className="about" id="about" aria-label="About us" tabIndex={-1} style={{ '--about-scroll-distance': `${scrollDistance}px` }}>
@@ -85,16 +96,22 @@ export default function AboutSection() {
             </div>
           ))}
         </div>
-      <div className="about-story">
-        {chapters.map((chapter, index) => (
-          <article key={chapter.id} className="about-chapter" ref={element => { chapterRefs.current[index] = element }}>
-            <div className="about-copy">
-              <p>{chapter.description}</p>
-            </div>
-            <IntroductionMedia url={chapter.mediaUrl} inline />
-          </article>
-        ))}
-      </div>
+        <div className="about-story">
+          {chapters.map((chapter, index) => (
+            <article key={chapter.id} className="about-chapter" ref={element => { chapterRefs.current[index] = element }}>
+              <div className="about-copy">
+                <p>{chapter.description}</p>
+              </div>
+              <IntroductionMedia url={chapter.mediaUrl} inline />
+            </article>
+          ))}
+        </div>
+        <div className="about-caption-band">
+          <blockquote className="about-caption">
+            <span className="about-caption-mark" aria-hidden="true">“</span>
+            <p>{siteCopy.introduction.caption}</p>
+          </blockquote>
+        </div>
       </div>
     </section>
   )
