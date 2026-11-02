@@ -1,5 +1,5 @@
 import './hero-label.css'
-import { siteCopy } from '../../content/siteCopy.ts'
+import { siteCopy } from '../../content/siteCopy.js'
 
 export default function HeroLabel() {
   const labels = siteCopy.introduction.eyebrowLabels

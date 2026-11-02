@@ -2,7 +2,7 @@ import privateClass from '../assets/learning/private-class.png'
 import groupClass from '../assets/learning/group-class.png'
 import practica from '../assets/learning/practica.png'
 import milonga from '../assets/learning/milonga.png'
-import { siteCopy } from '../content/siteCopy.ts'
+import { siteCopy } from '../content/siteCopy.js'
 
 export const featuredOffering = {
   id: 'private',

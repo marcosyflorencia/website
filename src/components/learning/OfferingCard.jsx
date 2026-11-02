@@ -1,5 +1,5 @@
 import Button from '../ui/Button.jsx'
-import { siteCopy } from '../../content/siteCopy.ts'
+import { siteCopy } from '../../content/siteCopy.js'
 
 export default function OfferingCard({ offering, featured = false, onAction }) {
   const Heading = featured ? 'h2' : 'h3'

@@ -4,7 +4,7 @@ import HeroLabel from './HeroLabel.jsx'
 import scrollToSection from '../../utils/scrollToSection.js'
 import hero from '../../assets/hero_img.png'
 import wordmark from '../../assets/wordmark.svg'
-import { siteCopy } from '../../content/siteCopy.ts'
+import { siteCopy } from '../../content/siteCopy.js'
 
 export default function HeroSection() {
   const heroRef = useRef(null)

@@ -1,5 +1,5 @@
 import Accordion from '../ui/Accordion.jsx'
-import { siteCopy } from '../../content/siteCopy.ts'
+import { siteCopy } from '../../content/siteCopy.js'
 import './questions.css'
 
 const questions = siteCopy.faq.items.map(item => ({

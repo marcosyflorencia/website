@@ -1,6 +1,6 @@
 import Button from '../ui/Button.jsx'
 import { useId, useState } from 'react'
-import { siteCopy } from '../../content/siteCopy.ts'
+import { siteCopy } from '../../content/siteCopy.js'
 
 // Crop coordinates refer to the unchanged, locally stored Figma artwork.
 function Artwork({ src, crop }) {

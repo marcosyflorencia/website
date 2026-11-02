@@ -2,7 +2,7 @@ import Button from '../ui/Button.jsx'
 import SkylineDivider from '../media/SkylineDivider.jsx'
 import VideoGallery from '../media/VideoGallery.jsx'
 import { performancePoster, performanceVideos } from '../../data/performanceVideos.js'
-import { siteCopy } from '../../content/siteCopy.ts'
+import { siteCopy } from '../../content/siteCopy.js'
 import './events.css'
 
 export default function EventsSection({ onInquiry }) {

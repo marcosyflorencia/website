@@ -1,5 +1,5 @@
 import artwork from '../assets/events/performance-gallery.png'
-import { siteCopy } from '../content/siteCopy.ts'
+import { siteCopy } from '../content/siteCopy.js'
 
 const videoCopy = siteCopy.hiring.videoGallery.videos
 

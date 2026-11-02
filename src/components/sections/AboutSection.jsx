@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import { aboutChapters as chapters } from '../../data/about.js'
 import texture from '../../assets/about-texture.png'
 import map from '../../assets/about-map.png'
-import { siteCopy } from '../../content/siteCopy.ts'
+import { siteCopy } from '../../content/siteCopy.js'
 import './about.css'
 
 export default function AboutSection() {

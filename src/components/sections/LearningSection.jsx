@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import OfferingCard from '../learning/OfferingCard.jsx'
 import { classOfferings, featuredOffering } from '../../data/offerings.js'
-import { siteCopy } from '../../content/siteCopy.ts'
+import { siteCopy } from '../../content/siteCopy.js'
 import './learning.css'
 
 export default function LearningSection({ onAction }) {
