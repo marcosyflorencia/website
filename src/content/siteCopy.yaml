@@ -3,24 +3,22 @@
 # Use the | character for paragraphs that span more than one line.
 
 introduction:
-  about:
-    title: About Us
-    chapters:
-      - title: ""
-        body: |
-          Born in Argentina, the birthplace of tango, Marcos and Florencia have studied with maestros and milongueros since their teenage years.
+  chapters:
+    - description: |
+        Born in Argentina, the birthplace of tango, Marcos and Florencia have studied with maestros and milongueros since their teenage years.
+      photoUrl: /images/about/about_img_1.png
 
-      - title: Buenos Aires Recognition 2015
-        body: |
-          Their partnership quickly earned recognition in tango’s birthplace. In 2015, they placed 2nd in the Buenos Aires City Tango Championship, one of the world’s most respected tango competitions.
+    - description: |
+        Their partnership quickly earned recognition in tango’s birthplace. In 2015, they placed 2nd in the Buenos Aires City Tango Championship, one of the world’s most respected tango competitions.
+      photoUrl: /images/about/about_img_2.png
 
-      - title: "World Championship Finalists: 2017–2023"
-        body: |
-          Over the years, Marcos and Florencia have carried Argentine tango across the world, teaching and performing at major festivals, cultural events, and stage productions. They have been finalists many times in the World Tango Championship’s Tango de Pista (Salon) category.
+    - description: |
+        Over the years, Marcos and Florencia have carried Argentine tango across the world, teaching and performing at major festivals, cultural events, and stage productions. They have been finalists many times in the World Tango Championship’s Tango de Pista (Salon) category.
+      photoUrl: /images/about/about_img_3.png
 
-      - title: Present, New York
-        body: |
-          New York City is now their home. They share Argentine tango with an international audience in New York. In 2025, their dedication was recognized by the U.S. Congress and the Argentine Civic Committee.
+    - description: |
+        New York City is now their home. They share Argentine tango with an international audience in New York. In 2025, their dedication was recognized by the U.S. Congress and the Argentine Civic Committee.
+      photoUrl: /images/about/about_img_4.png
 
 learning:
   quote: |
