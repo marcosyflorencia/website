@@ -18,6 +18,16 @@ export default function OfferingCarousel({ images, offeringTitle }) {
     setActiveIndex(currentIndex => Math.min(currentIndex, images.length - 1))
   }, [images.length])
 
+  useEffect(() => {
+    if (!hasMultipleImages || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
+
+    const timeout = window.setTimeout(() => {
+      setActiveIndex(currentIndex => (currentIndex + 1) % images.length)
+    }, 2000)
+
+    return () => window.clearTimeout(timeout)
+  }, [activeIndex, hasMultipleImages, images.length])
+
   const showPrevious = () => {
     setActiveIndex(currentIndex => (currentIndex - 1 + images.length) % images.length)
   }
@@ -47,7 +57,7 @@ export default function OfferingCarousel({ images, offeringTitle }) {
           >
             <ArrowIcon direction="next" />
           </Button>
-          <span className="offering-carousel-status" aria-live="polite">
+          <span className="offering-carousel-status">
             Image {activeIndex + 1} of {images.length}
           </span>
         </>
