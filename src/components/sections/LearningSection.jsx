@@ -9,14 +9,16 @@ const ACTION_LABELS = [
   'Join WhatsApp Group',
 ]
 
+const LEARNING_TITLE = 'Learning Tango'
+
 export default function LearningSection({ onAction }) {
-  const offerings = Array.isArray(siteCopy.learning.offerings) ? siteCopy.learning.offerings : []
+  const offerings = Array.isArray(siteCopy.learning) ? siteCopy.learning : []
 
   return (
     <section id="learning" className="learning" tabIndex={-1} aria-labelledby="learning-title">
       <div className="learning-class-reveal">
         <div className="learning-inner">
-          <h2 id="learning-title" className="learning-title">{siteCopy.learning.title}</h2>
+          <h2 id="learning-title" className="learning-title">{LEARNING_TITLE}</h2>
           <div className="offering-list">
             {offerings.map((offering, index) => (
               <OfferingCard

@@ -2,14 +2,6 @@
 
 Edit `siteCopy.yaml` to update the introduction, About section, Learning Tango offerings, event-hiring section, or FAQ.
 
-## Simple text
-
-Change only the text after the colon:
-
-```yaml
-title: Learning Tango
-```
-
 ## Longer paragraphs
 
 Keep the `|` and indent the paragraph by two extra spaces:
@@ -21,10 +13,10 @@ description: |
 
 ## Introduction chapters
 
-Each chapter has only a description and media URL. Each dash starts a new chapter:
+Each item under `introduction` has only a description and media URL. Each dash starts a new chapter:
 
 ```yaml
-chapters:
+introduction:
   - description: |
       Write the chapter paragraph here.
     mediaUrl: /media/introduction/example.jpg
@@ -41,18 +33,16 @@ Add or remove as many chapter items as needed. The page adjusts its scroll lengt
 
 ## Learning Tango offerings
 
-Every item under `offerings` becomes one row in the Learning Tango section. Add or remove as many offerings as needed:
+Every item under `learning` becomes one row in the Learning Tango section. Add or remove as many offerings as needed. The “Learning Tango” section heading is managed by the website code:
 
 ```yaml
 learning:
-  title: Learning Tango
-  offerings:
-    - title: Private lessons
-      description: |
-        Write the offering description here.
-      images:
-        - /media/learning/private-class.png
-        - /media/learning/private-class-2.jpg
+  - title: Private lessons
+    description: |
+      Write the offering description here.
+    images:
+      - /media/learning/private-class.png
+      - /media/learning/private-class-2.jpg
 ```
 
 `schedule` is optional. Put image files in `public/media/learning`, then add their paths under that offering's `images` list. One image displays normally; two or more images automatically become a slideshow with previous and next buttons.
@@ -61,15 +51,26 @@ Learning action buttons are managed by the website code and do not need to be ad
 
 ## Hiring performance videos
 
-Each item under `hiring.videos` needs only a title and video URL:
+Each item under `hiring` needs only a title and video URL:
 
 ```yaml
 hiring:
-  videos:
-    - title: Salon Tango
-      videoUrl: https://www.youtube.com/watch?v=example
+  - title: Salon Tango
+    videoUrl: https://www.youtube.com/watch?v=example
 ```
 
 Add, remove, or reorder video items as needed. YouTube, Vimeo, and direct video-file URLs are supported.
 
-Do not rename fields such as `introduction`, `chapters`, `description`, `mediaUrl`, `learning`, `offerings`, `images`, `hiring`, `videos`, `videoUrl`, `id`, or `answer`; the website uses those names to place the copy correctly.
+## FAQ
+
+Every item under `faq` needs only a question and answer:
+
+```yaml
+faq:
+  - question: What should I wear to class?
+    answer: Wear comfortable clothes and shoes that stay securely on your feet.
+```
+
+Add, remove, or reorder FAQ items as needed.
+
+Do not rename the remaining fields such as `introduction`, `description`, `mediaUrl`, `learning`, `images`, `hiring`, `videoUrl`, `faq`, `question`, or `answer`; the website uses those names to place the copy correctly.

@@ -9,7 +9,7 @@ const thumbnailCrops = [
   [1036, 761, 280, 175],
 ]
 
-const maintainedVideos = Array.isArray(siteCopy.hiring.videos) ? siteCopy.hiring.videos : []
+const maintainedVideos = Array.isArray(siteCopy.hiring) ? siteCopy.hiring : []
 
 export const performancePoster = { src: artwork, crop: [99, 141, 1219, 506] }
 

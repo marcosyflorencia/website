@@ -3,89 +3,84 @@
 # Use the | character for paragraphs that span more than one line.
 
 introduction:
-  chapters:
-    - description: |
-        Born in Argentina, the birthplace of tango, Marcos and Florencia have studied with maestros and milongueros since their teenage years.
-      mediaUrl: /media/introduction/about_img_1.png
+  - description: |
+      Born in Argentina, the birthplace of tango, Marcos and Florencia have studied with maestros and milongueros since their teenage years.
+    mediaUrl: /media/introduction/about_img_1.png
 
-    - description: |
-       In 2015, they earned second place at the prestigious Buenos Aires City Tango Championship.
-      mediaUrl: /media/introduction/about_img_2.png
+  - description: |
+      In 2015, they earned second place at the prestigious Buenos Aires City Tango Championship.
+    mediaUrl: /media/introduction/about_img_2.png
 
-    - description: |
-       From 2017 to 2023, they performed worldwide and were multiple-time World Tango Championship finalists.
-      mediaUrl: /media/introduction/about_img_3.png
+  - description: |
+      From 2017 to 2023, they performed worldwide and were multiple-time World Tango Championship finalists.
+    mediaUrl: /media/introduction/about_img_3.png
 
-    - description: |
-       Recognized by the U.S. Congress for their dedication to tango, they are now based in New York City, teaching and performing across the US.
-      mediaUrl: /media/introduction/about_img_4.png
+  - description: |
+      Recognized by the U.S. Congress for their dedication to tango, they are now based in New York City, teaching and performing across the US.
+    mediaUrl: /media/introduction/about_img_4.png
 
 learning:
-  title: Learning Tango
-  offerings:
-    - title: Private lessons with Marcos and Florencia
-      description: |
-        Classes are tailored to your needs and available in Manhattan or Brooklyn. Inquire about pricing, location, and scheduling.
-      images:
-        - /media/learning/private-class.png
+  - title: Private lessons with Marcos and Florencia
+    description: |
+      Classes are tailored to your needs and available in Manhattan or Brooklyn. Inquire about pricing, location, and scheduling.
+    images:
+      - /media/learning/private-class.png
 
-    - title: Guided Practica
-      schedule: "Mondays, 6:30PM - 9:30PM"
-      description: |
-        Beginner-friendly practica at Ripley-Grier Midtown. Join the WhatsApp group for schedule updates, changes, or cancellations.
-      images:
-        - /media/learning/practica.png
+  - title: Guided Practica
+    schedule: "Mondays, 6:30PM - 9:30PM"
+    description: |
+      Beginner-friendly practica at Ripley-Grier Midtown. Join the WhatsApp group for schedule updates, changes, or cancellations.
+    images:
+      - /media/learning/practica.png
 
-    - title: Milonga
-      schedule: Fridays, 9 PM-1 AM
-      description: |
-        Every Friday at Ukrainian East Village Restaurant. Experience tango in its authentic social setting.
-      images:
-        - /media/learning/milonga.png
+  - title: Milonga
+    schedule: Fridays, 9 PM-1 AM
+    description: |
+      Every Friday at Ukrainian East Village Restaurant. Experience tango in its authentic social setting.
+    images:
+      - /media/learning/milonga.png
 
-    - title: Intermediate Group Class
-      schedule: "Fridays, 8:00 PM - 9:00 PM"
-      description: |
-        Group class for intermediate dancers before milonga. Join the WhatsApp group for the most current class information.
-      action: Join WhatsApp Group
-      images:
-        - /media/learning/group-class.png
+  - title: Intermediate Group Class
+    schedule: "Fridays, 8:00 PM - 9:00 PM"
+    description: |
+      Group class for intermediate dancers before milonga. Join the WhatsApp group for the most current class information.
+    action: Join WhatsApp Group
+    images:
+      - /media/learning/group-class.png
 
 hiring:
-  videos:
-    - title: Salon Tango
-      videoUrl: https://www.youtube.com/watch?v=DBRWDRs3u5A
-    - title: Stage Tango
-      videoUrl: https://www.youtube.com/watch?v=DBRWDRs3u5A
-    - title: Vals
-      videoUrl: https://www.youtube.com/watch?v=DBRWDRs3u5A
-    - title: Milonga
-      videoUrl: https://www.youtube.com/watch?v=DBRWDRs3u5A
+  - title: Salon Tango
+    videoUrl: https://www.youtube.com/watch?v=DBRWDRs3u5A
+  - title: Stage Tango
+    videoUrl: https://www.youtube.com/watch?v=DBRWDRs3u5A
+  - title: Vals
+    videoUrl: https://www.youtube.com/watch?v=DBRWDRs3u5A
+  - title: Milonga
+    videoUrl: https://www.youtube.com/watch?v=DBRWDRs3u5A
 
 faq:
-  items:
-    - question: What tango styles are there?
-      answer: |
-        Argentine tango has several approaches, with plenty of overlap between them:
+  - question: What tango styles are there?
+    answer: |
+      Argentine tango has several approaches, with plenty of overlap between them:
 
-        Tango salón: Social tango danced at milongas, emphasizing connection, musicality, and moving comfortably around a shared dance floor.
+      Tango salón: Social tango danced at milongas, emphasizing connection, musicality, and moving comfortably around a shared dance floor.
 
-        Milonguero style: Usually danced in a close embrace with compact movements, especially suited to a crowded floor.
+      Milonguero style: Usually danced in a close embrace with compact movements, especially suited to a crowded floor.
 
-        Tango nuevo: An exploratory approach that plays with movement, space, and changes in the embrace.
+      Tango nuevo: An exploratory approach that plays with movement, space, and changes in the embrace.
 
-        Stage tango: Choreographed for an audience, often featuring dramatic movements, lifts, and theatrical expression.
+      Stage tango: Choreographed for an audience, often featuring dramatic movements, lifts, and theatrical expression.
 
-        You may also hear about vals and milonga. These are related musical and dance forms enjoyed alongside tango: vals has a lilting three-beat rhythm, while milonga often has a brisk, playful feel.
+      You may also hear about vals and milonga. These are related musical and dance forms enjoyed alongside tango: vals has a lilting three-beat rhythm, while milonga often has a brisk, playful feel.
 
-    - question: Can I join if I have never danced tango?
-      answer: Details about beginner lessons and getting started will be added here soon.
+  - question: Can I join if I have never danced tango?
+    answer: Details about beginner lessons and getting started will be added here soon.
 
-    - question: Do I need to bring a partner?
-      answer: Partner requirements for private lessons and group classes will be added here soon.
+  - question: Do I need to bring a partner?
+    answer: Partner requirements for private lessons and group classes will be added here soon.
 
-    - question: What should I wear to class?
-      answer: Clothing and footwear guidance will be added here soon.
+  - question: What should I wear to class?
+    answer: Clothing and footwear guidance will be added here soon.
 
-    - question: How do I book a lesson or an event?
-      answer: Booking steps, availability, and inquiry details will be added here soon.
+  - question: How do I book a lesson or an event?
+    answer: Booking steps, availability, and inquiry details will be added here soon.
