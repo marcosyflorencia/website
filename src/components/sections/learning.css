@@ -3,10 +3,13 @@
   --learning-copy-size: var(--font-size-body-bg);
   --learning-divider: color-mix(in srgb, var(--color-cream) 30%, transparent);
   --learning-content-width: min(100%, var(--section-content-max));
+  --learning-overlap: clamp(10rem, 40svh, 26rem);
   background: var(--learning-background);
   color: var(--color-white);
+  margin-top: calc(-1 * var(--learning-overlap));
   padding-bottom: 6rem;
   position: relative;
+  z-index: 1;
   isolation: isolate;
 }
 .learning:focus { outline: none; }
@@ -42,7 +45,7 @@
   .offering { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
 }
 @media (max-width: 700px) {
-  .learning { padding-bottom: 3rem; }
+  .learning { --learning-overlap: min(25svh, 10rem); padding-bottom: 3rem; }
   .learning-inner { padding-top: 3rem; }
   .offering-list { margin-top: 2.5rem; }
   .offering, .offering--without-images { grid-template-columns: 1fr; gap: 1.25rem; }
