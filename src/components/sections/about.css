@@ -16,9 +16,9 @@
 .about:focus { outline: none; }
 .about-stage { position: sticky; top: 0; height: 100svh; overflow: hidden; }
 .about-text-column { position: absolute; z-index: 1; top: calc(var(--nav-height) + 3rem); bottom: var(--about-image-bottom-gap); left: 7.8125%; width: 36.44%; display: flex; flex-direction: column; justify-content: center; gap: 0.75rem; overflow: visible; opacity: var(--about-content-opacity, 1); }
-.about-heading-row { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem 1rem; }
+.about-heading-row { display: flex; align-items: center; }
 .about-title { margin: 0; color: var(--about-heading); font: var(--font-weight-bold) var(--font-size-title-big)/var(--line-height-title-big) var(--font-heading); }
-.about-chapter-dots { display: flex; align-items: center; flex-wrap: wrap; gap: 0.125rem; }
+.about-chapter-dots { position: absolute; top: 50%; right: calc(100% + 0.5rem); display: flex; flex-direction: column; align-items: center; transform: translateY(-50%); }
 .about-chapter-dot { width: 2rem; height: 2rem; display: grid; place-items: center; padding: 0; border: 0; background: transparent; color: inherit; }
 .about-chapter-dot::before { content: ''; width: 0.4375rem; height: 0.4375rem; border: 1px solid currentColor; border-radius: 50%; background: transparent; opacity: 0.65; transition: transform 160ms, background-color 160ms, border-color 160ms, opacity 160ms; }
 .about-chapter-dot[data-complete="true"]::before { background: currentColor; opacity: 0.55; }
@@ -54,7 +54,8 @@
   .about-gallery { top: calc(var(--nav-height) + 4rem); bottom: auto; right: 1.5rem; width: calc(100% - 3rem); height: var(--about-mobile-image-height); }
   .about-media img, .about-media video { width: auto; max-width: 100%; max-height: 100%; }
   .about-stage::after { content: ''; position: absolute; top: calc(var(--nav-height) + var(--about-mobile-image-height) + 5rem); bottom: 0; left: 0; right: 0; background: var(--about-black); }
-  .about-text-column { top: calc(var(--nav-height) + var(--about-mobile-image-height) + 6rem); bottom: 1.5rem; left: 1.5rem; width: calc(100% - 3rem); justify-content: flex-start; overflow-y: auto; }
+  .about-text-column { top: calc(var(--nav-height) + var(--about-mobile-image-height) + 6rem); bottom: 1.5rem; left: 1.5rem; width: calc(100% - 3rem); justify-content: flex-start; padding-left: 2.25rem; overflow-y: auto; }
+  .about-chapter-dots { right: auto; left: 0; }
   .about-story { align-items: start; overflow: visible; mask-image: none; }
   .about-copy { width: 100%; max-width: none; }
   .about-caption-band { padding: 4rem 1.5rem 4rem 3.75rem; }
@@ -64,8 +65,9 @@
 @media (prefers-reduced-motion: reduce) {
   .about { height: auto; }
   .about-stage { position: relative; height: auto; overflow: visible; }
-  .about-text-column { position: static; display: block; width: auto; overflow: visible; opacity: 1; }
-  .about-title { padding: 3rem 7.8125% 0; }
+  .about-text-column { position: static; display: block; width: auto; padding-left: 0; overflow: visible; opacity: 1; }
+  .about-heading-row { padding: 3rem 7.8125% 0; gap: 1rem; }
+  .about-chapter-dots { position: static; order: -1; transform: none; }
   .about-background, .about-gallery, .about-stage::after { display: none; }
   .about-story { position: static; display: block; width: auto; overflow: visible; mask-image: none; }
   .about-chapter { display: flex; align-items: center; opacity: 1; transform: none; will-change: auto; min-height: auto; padding: 4rem 7.8125%; gap: 3rem; }
@@ -77,6 +79,7 @@
   .about-chapter-dot::before { transition: none; }
 }
 @media (prefers-reduced-motion: reduce) and (max-width: 700px) {
+  .about-heading-row { padding-inline: 1.5rem; }
   .about-chapter { flex-direction: column; padding: 3rem 1.5rem; gap: 2rem; }
   .about-copy, .about-inline-media { width: 100%; }
 }
