@@ -4,11 +4,9 @@ import HeroLabel from './HeroLabel.jsx'
 import scrollToSection from '../../utils/scrollToSection.js'
 import hero from '../../assets/hero_img.png'
 import wordmark from '../../assets/wordmark.svg'
-import { siteCopy } from '../../content/siteCopy.js'
 
 export default function HeroSection() {
   const heroRef = useRef(null)
-  const copy = siteCopy.introduction
 
   useEffect(() => {
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -49,7 +47,9 @@ export default function HeroSection() {
           <HeroLabel />
           <h1><img src={wordmark} alt="Marcos & Florencia" width="623" height="167" /></h1>
           <p className="introduction">
-            {copy.statementLines.map((line, index) => <span key={line}>{line}{index < copy.statementLines.length - 1 && <br />}</span>)}
+            From Argentina,<br />
+            For Everyone,<br />
+            Through Connection.
           </p>
           <div className="actions">
             <Button onClick={() => scrollToSection('learning')}>Start your journey</Button>

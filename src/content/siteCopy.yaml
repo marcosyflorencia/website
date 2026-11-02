@@ -3,14 +3,6 @@
 # Use the | character for paragraphs that span more than one line.
 
 introduction:
-  eyebrowLabels:
-    - ARGENTINE TANGO ARTISTS
-    - NYC-BASED TEACHERS
-    - AWARD-WINNING PERFORMERS
-  statementLines:
-    - From Argentina,
-    - For Everyone,
-    - Through Connection.
   about:
     title: About Us
     chapters:

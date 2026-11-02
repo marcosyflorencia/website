@@ -1,8 +1,12 @@
 import './hero-label.css'
-import { siteCopy } from '../../content/siteCopy.js'
+
+const labels = [
+  'ARGENTINE TANGO ARTISTS',
+  'NYC-BASED TEACHERS',
+  'AWARD-WINNING PERFORMERS',
+]
 
 export default function HeroLabel() {
-  const labels = siteCopy.introduction.eyebrowLabels
   return (
     <div className="eyebrow hero-label">
       <span className="hero-label-accessible">{labels.join('. ')}.</span>

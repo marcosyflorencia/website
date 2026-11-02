@@ -24,10 +24,10 @@ description: |
 Each list item begins with a dash. Keep the dash and indentation:
 
 ```yaml
-statementLines:
-  - From Argentina,
-  - For Everyone,
-  - Through Connection.
+chapters:
+  - title: Present, New York
+    body: |
+      Write the chapter paragraph here.
 ```
 
 Do not rename fields such as `introduction`, `description`, `id`, or `answer`; the website uses those names to place the copy correctly.
