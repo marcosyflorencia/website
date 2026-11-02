@@ -1,5 +1,4 @@
 import Button from '../ui/Button.jsx'
-import { siteCopy } from '../../content/siteCopy.js'
 import OfferingCarousel from './OfferingCarousel.jsx'
 
 export default function OfferingCard({ offering, index, onAction }) {
@@ -14,7 +13,7 @@ export default function OfferingCard({ offering, index, onAction }) {
         {offering.description && <p className="offering-description">{offering.description}</p>}
         {offering.note && <p className="offering-note">{offering.note}</p>}
         {offering.action && (
-          <Button onClick={() => onAction?.(offering.id)} title={siteCopy.learning.actionDestinationTitle}>
+          <Button onClick={() => onAction?.(offering.id)}>
             {offering.action}
           </Button>
         )}
