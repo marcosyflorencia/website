@@ -1,12 +1,13 @@
 .contact {
   --contact-panel-background: rgb(13 13 13 / 50%);
   position: relative;
-  min-height: 115svh;
+  min-height: 100svh;
   background: var(--color-background);
+  isolation: isolate;
 }
 .contact:focus { outline: none; }
-.contact-scene { position: fixed; inset: 0; display: flex; align-items: flex-start; z-index: 1; overflow-y: auto; pointer-events: none; visibility: var(--contact-visibility, hidden); opacity: var(--contact-opacity, 0); }
-.contact-background { position: fixed; inset: 0; height: 100svh; overflow: hidden; z-index: 0; pointer-events: none; opacity: var(--contact-opacity, 0); }
+.contact-scene { position: relative; min-height: 100svh; display: flex; align-items: flex-start; z-index: 1; pointer-events: none; visibility: var(--contact-visibility, hidden); opacity: var(--contact-opacity, 0); }
+.contact-background { position: sticky; top: 0; height: 100svh; margin-bottom: -100svh; overflow: hidden; z-index: 0; pointer-events: none; opacity: var(--contact-opacity, 0); }
 
 .page-sections > section.contact { scroll-margin-top: 0; }
 .contact-content { width: 36rem; max-width: calc(100% - var(--content-inline) - var(--content-inline)); margin: max(calc(var(--nav-height) + 2rem), 23.8386svh) 0 3rem var(--content-inline); padding: 2rem 1.5rem; background: var(--contact-panel-background); pointer-events: auto; flex-shrink: 0; }
@@ -20,12 +21,10 @@
 .contact-status { margin: 0; font-size: var(--font-size-body-small); line-height: var(--line-height-body); }
 #questions > * { opacity: var(--questions-opacity, 1); }
 @media (max-width: 700px) {
-  .contact { min-height: 110svh; }
   .contact-background::after { content: ''; position: absolute; inset: 0; background: var(--color-backdrop); }
   .contact-content { width: calc(100% - 3rem); max-width: 31rem; margin-inline: auto; }
 
 }
 @media (prefers-reduced-motion: reduce) {
-  .contact { min-height: 100svh; }
   #questions > * { opacity: 1; }
 }
