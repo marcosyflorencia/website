@@ -42,7 +42,7 @@ export default function HeroSection() {
 
   return (
     <div className="hero-space" id="home">
-      <section className="landing" ref={heroRef} aria-label={copy.sectionLabel}>
+      <section className="landing" ref={heroRef} aria-label="Introduction">
         <img className="hero-image" src={hero} alt="Marcos and Florencia dancing Argentine tango" fetchPriority="high" />
         <div className="hero-nav-space" aria-hidden="true" />
         <div className="hero-content">
@@ -52,8 +52,8 @@ export default function HeroSection() {
             {copy.statementLines.map((line, index) => <span key={line}>{line}{index < copy.statementLines.length - 1 && <br />}</span>)}
           </p>
           <div className="actions">
-            <Button onClick={() => scrollToSection('learning')}>{copy.primaryAction}</Button>
-            <Button variant="secondary" onClick={() => scrollToSection('events')}>{copy.secondaryAction}</Button>
+            <Button onClick={() => scrollToSection('learning')}>Start your journey</Button>
+            <Button variant="secondary" onClick={() => scrollToSection('events')}>Hire for events</Button>
           </div>
         </div>
       </section>

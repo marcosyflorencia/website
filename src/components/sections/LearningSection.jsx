@@ -45,7 +45,7 @@ export default function LearningSection({ onAction }) {
     }
   }, [])
   return (
-    <section ref={sectionRef} id="learning" className="learning" tabIndex={-1} aria-label={siteCopy.learning.sectionLabel}>
+    <section ref={sectionRef} id="learning" className="learning" tabIndex={-1} aria-label="Learning Tango">
       <div className="learning-quote-band">
         <blockquote className="learning-quote">
           <span className="learning-quote-mark" aria-hidden="true">“</span>

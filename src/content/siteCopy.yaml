@@ -3,7 +3,6 @@
 # Use the | character for paragraphs that span more than one line.
 
 introduction:
-  sectionLabel: Introduction
   eyebrowLabels:
     - ARGENTINE TANGO ARTISTS
     - NYC-BASED TEACHERS
@@ -12,8 +11,6 @@ introduction:
     - From Argentina,
     - For Everyone,
     - Through Connection.
-  primaryAction: Start your journey
-  secondaryAction: Hire for events
   about:
     title: About Us
     chapters:
@@ -34,7 +31,6 @@ introduction:
           New York City is now their home. They share Argentine tango with an international audience in New York. In 2025, their dedication was recognized by the U.S. Congress and the Argentine Civic Committee.
 
 learning:
-  sectionLabel: Learning Tango
   quote: |
     Tango is more than performance. It is a way to connect and communicate through the embrace.
   actionDestinationTitle: Contact section — destination placeholder
