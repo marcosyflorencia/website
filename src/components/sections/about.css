@@ -8,6 +8,7 @@
   --about-caption-mark: rgb(255 255 255 / 30%);
   --about-caption-size: var(--font-size-title-big);
   --story-body-size: var(--font-size-title-medium);
+  --about-content-inline: max(var(--content-inline, clamp(1.5rem, 4.4vw, 5.625rem)), calc((100% - var(--section-content-max)) / 2));
   position: relative;
   height: calc(100svh + var(--about-scroll-distance, 0px));
   background: var(--about-black);
@@ -15,7 +16,7 @@
 }
 .about:focus { outline: none; }
 .about-stage { position: sticky; top: 0; height: 100svh; overflow: hidden; }
-.about-text-column { position: absolute; z-index: 1; top: calc(var(--nav-height) + 3rem); bottom: var(--about-image-bottom-gap); left: var(--content-inline); width: 36.44%; display: flex; flex-direction: column; justify-content: center; gap: 0.75rem; overflow: visible; opacity: var(--about-content-opacity, 1); }
+.about-text-column { position: absolute; z-index: 1; top: calc(var(--nav-height) + 3rem); bottom: var(--about-image-bottom-gap); left: var(--about-content-inline); width: 36.44%; display: flex; flex-direction: column; justify-content: center; gap: 0.75rem; overflow: visible; opacity: var(--about-content-opacity, 1); }
 .about-heading-row { display: flex; align-items: center; }
 .about-title { margin: 0; color: var(--about-heading); font: var(--font-weight-bold) var(--font-size-title-big)/var(--line-height-title-big) var(--font-heading); }
 .about-chapter-dots { position: absolute; top: 50%; right: calc(100% + 0.5rem); display: flex; flex-direction: column; align-items: center; transform: translateY(-50%); }
@@ -66,11 +67,11 @@
   .about { height: auto; }
   .about-stage { position: relative; height: auto; overflow: visible; }
   .about-text-column { position: static; display: block; width: auto; padding-left: 0; overflow: visible; opacity: 1; }
-  .about-heading-row { padding: 3rem var(--content-inline) 0; gap: 1rem; }
+  .about-heading-row { padding: 3rem var(--about-content-inline) 0; gap: 1rem; }
   .about-chapter-dots { position: static; order: -1; transform: none; }
   .about-background, .about-gallery, .about-stage::after { display: none; }
   .about-story { position: static; display: block; width: auto; overflow: visible; mask-image: none; }
-  .about-chapter { display: flex; align-items: center; opacity: 1; transform: none; will-change: auto; min-height: auto; padding: 4rem var(--content-inline); gap: 3rem; }
+  .about-chapter { display: flex; align-items: center; opacity: 1; transform: none; will-change: auto; min-height: auto; padding: 4rem var(--about-content-inline); gap: 3rem; }
   .about-chapter:first-child { padding-top: 1rem; }
   .about-copy { width: 45%; }
   .about-inline-media { display: flex; width: 50%; height: auto; max-height: calc(100svh - var(--nav-height) - var(--about-image-top-gap) - var(--about-image-bottom-gap)); }

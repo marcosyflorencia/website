@@ -2,7 +2,7 @@
   --learning-background: #0b0b0a;
   --learning-copy-size: var(--font-size-body-bg);
   --learning-divider: color-mix(in srgb, var(--color-cream) 30%, transparent);
-  --learning-content-width: min(100%, 70rem);
+  --learning-content-width: min(100%, var(--section-content-max));
   background: var(--learning-background);
   color: var(--color-white);
   padding-bottom: 6rem;

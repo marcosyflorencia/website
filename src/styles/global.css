@@ -4,6 +4,7 @@
 :root {
   --nav-height: 5.6875rem;
   --content-inline: clamp(1.5rem, 4.4vw, 5.625rem);
+  --section-content-max: 70rem;
   --nav-overlay: rgb(0 0 0 / 50%);
   --hero-unit: 1vw;
   --color-cream: #fff4e7;
