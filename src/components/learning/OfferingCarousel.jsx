@@ -23,7 +23,7 @@ export default function OfferingCarousel({ images, offeringTitle }) {
 
     const timeout = window.setTimeout(() => {
       setActiveIndex(currentIndex => (currentIndex + 1) % images.length)
-    }, 2000)
+    }, 4000)
 
     return () => window.clearTimeout(timeout)
   }, [activeIndex, hasMultipleImages, images.length])
@@ -38,7 +38,18 @@ export default function OfferingCarousel({ images, offeringTitle }) {
 
   return (
     <div className="offering-carousel">
-      <img src={images[activeIndex]} alt="" loading="lazy" />
+      <div className="offering-carousel-images">
+        {images.map((image, index) => (
+          <img
+            key={`${image}-${index}`}
+            className="offering-carousel-image"
+            src={image}
+            alt=""
+            loading="lazy"
+            data-active={index === activeIndex}
+          />
+        ))}
+      </div>
       {hasMultipleImages && (
         <>
           <Button
