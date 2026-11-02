@@ -11,7 +11,6 @@ export default function AboutSection() {
   const root = useRef(null)
   const chapterRefs = useRef([])
   const imageRefs = useRef([])
-  const galleryRef = useRef(null)
   const stage = useRef(null)
   const textColumn = useRef(null)
   const [activeChapter, setActiveChapter] = useState(0)
@@ -54,16 +53,13 @@ export default function AboutSection() {
         chapter.style.transform = `translateY(${i === index ? -distance * blend : distance * (1 - blend)}px)`
         chapter.setAttribute('aria-hidden', String(opacity < 0.5))
       })
-      // Switch only while the black overlay is fully opaque; never blend photos.
+      // Switch at the midpoint while keeping one image fully visible at all times.
       const visibleImage = blend < 0.5 ? index : Math.min(index + 1, chapters.length - 1)
       setActiveChapter(current => current === visibleImage ? current : visibleImage)
       imageRefs.current.forEach((image, i) => {
         image.style.opacity = i === visibleImage ? '1' : '0'
         image.style.visibility = i === visibleImage ? 'visible' : 'hidden'
       })
-      const darkness = Math.min(1, Math.min(blend, 1 - blend) / 0.45)
-      const easedDarkness = darkness * darkness * (3 - 2 * darkness)
-      galleryRef.current.style.setProperty('--image-overlay-opacity', String(easedDarkness))
       const captionStart = (chapters.length - 1) * step + 160
       const captionOpacity = ease((travel - captionStart) / 200)
       stage.current.style.setProperty('--about-caption-opacity', String(captionOpacity))
@@ -106,7 +102,7 @@ export default function AboutSection() {
     <section ref={root} className="about" id="about" aria-labelledby="about-title" tabIndex={-1} style={{ '--about-scroll-distance': `${scrollDistance}px` }}>
         <div ref={stage} className="about-stage">
           <div className="about-background about-background--texture"><img src={texture} alt="" /></div>
-        <div ref={galleryRef} className="about-gallery" aria-hidden="true">
+        <div className="about-gallery" aria-hidden="true">
           {chapters.map((chapter, index) => (
             <div key={chapter.id} ref={element => { imageRefs.current[index] = element }} className="about-photo">
               <IntroductionMedia url={chapter.mediaUrl} />
