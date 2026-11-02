@@ -16,7 +16,7 @@
 .offering { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr); gap: clamp(2rem, 5vw, 5.5rem); align-items: stretch; min-width: 0; }
 .offering--without-images { grid-template-columns: minmax(0, 34rem); }
 .offering-content { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 0.75rem; min-width: 0; padding-block: 2rem; }
-.offering-content h3 { margin: 0; font: var(--font-weight-bold) var(--font-size-body-bg)/var(--line-height-body) var(--font-body); }
+.offering-content h3 { margin: 0; font: var(--font-weight-bold) var(--font-size-body-large)/var(--line-height-body) var(--font-body); }
 .offering-content p { max-width: 34rem; margin: 0; font-size: var(--learning-copy-size); font-weight: var(--font-weight-light); line-height: var(--line-height-body); white-space: pre-line; }
 .offering-content .offering-schedule { color: var(--color-accent); font-weight: var(--font-weight-medium); }
 .offering-content .offering-note { margin-top: 0.25rem; }

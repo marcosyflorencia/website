@@ -3,6 +3,7 @@
   --font-body: 'Roboto', Arial, sans-serif;
   --font-heading: 'Times New Roman', Times, serif;
   --font-nav: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  --font-size-body-large: 1.25rem; /* 20px */
   --font-size-body-bg: 1.125rem; /* 18px */
   --font-size-body-medium: 1rem; /* 16px */
   --font-size-body-small: 0.875rem; /* 14px */
