@@ -3,8 +3,6 @@
 # Use the | character for paragraphs that span more than one line.
 
 introduction:
-  caption: |
-    Tango is more than performance. It is a way to connect and communicate through the embrace.
   chapters:
     - description: |
         Born in Argentina, the birthplace of tango, Marcos and Florencia have studied with maestros and milongueros since their teenage years.
@@ -25,8 +23,7 @@ introduction:
 learning:
   title: Learning Tango
   offerings:
-    - id: private
-      title: Private lessons with Marcos and Florencia
+    - title: Private lessons with Marcos and Florencia
       description: |
         Classes are tailored to your needs and available in Manhattan or Brooklyn. Inquire about pricing, location, and scheduling.
       note: Packages available.
@@ -34,8 +31,7 @@ learning:
       images:
         - /media/learning/private-class.png
 
-    - id: practica
-      title: Guided Practica
+    - title: Guided Practica
       schedule: "Mondays, 6:30PM - 9:30PM"
       description: |
         Beginner-friendly practica at Ripley-Grier Midtown. Join the WhatsApp group for schedule updates, changes, or cancellations.
@@ -43,8 +39,7 @@ learning:
       images:
         - /media/learning/practica.png
 
-    - id: milonga
-      title: Milonga
+    - title: Milonga
       schedule: Fridays, 9 PM-1 AM
       description: |
         Every Friday at Ukrainian East Village Restaurant. Experience tango in its authentic social setting.
@@ -52,8 +47,7 @@ learning:
       images:
         - /media/learning/milonga.png
 
-    - id: group
-      title: Intermediate Group Class
+    - title: Intermediate Group Class
       schedule: "Fridays, 8:00 PM - 9:00 PM"
       description: |
         Group class for intermediate dancers before milonga. Join the WhatsApp group for the most current class information.

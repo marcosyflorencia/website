@@ -24,8 +24,6 @@ description: |
 Each chapter has only a description and media URL. Each dash starts a new chapter:
 
 ```yaml
-caption: |
-  Write the About section caption here.
 chapters:
   - description: |
       Write the chapter paragraph here.
@@ -49,8 +47,7 @@ Every item under `offerings` becomes one row in the Learning Tango section. Add 
 learning:
   title: Learning Tango
   offerings:
-    - id: private
-      title: Private lessons
+    - title: Private lessons
       description: |
         Write the offering description here.
       note: Packages available.
@@ -60,6 +57,6 @@ learning:
         - /media/learning/private-class-2.jpg
 ```
 
-Keep each `id` short and unique. `schedule` and `note` are optional. Put image files in `public/media/learning`, then add their paths under that offering's `images` list. One image displays normally; two or more images automatically become a slideshow with previous and next buttons.
+`schedule` and `note` are optional. Put image files in `public/media/learning`, then add their paths under that offering's `images` list. One image displays normally; two or more images automatically become a slideshow with previous and next buttons.
 
 Do not rename fields such as `introduction`, `chapters`, `description`, `mediaUrl`, `learning`, `offerings`, `images`, `id`, or `answer`; the website uses those names to place the copy correctly.

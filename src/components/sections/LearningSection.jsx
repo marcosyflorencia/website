@@ -12,7 +12,7 @@ export default function LearningSection({ onAction }) {
           <h2 id="learning-title" className="learning-title">{siteCopy.learning.title}</h2>
           <div className="offering-list">
             {offerings.map((offering, index) => (
-              <OfferingCard key={offering.id ?? index} offering={offering} index={index} onAction={onAction} />
+              <OfferingCard key={index} offering={offering} index={index} onAction={onAction} />
             ))}
           </div>
         </div>

@@ -3,7 +3,7 @@ import OfferingCarousel from './OfferingCarousel.jsx'
 
 export default function OfferingCard({ offering, index, onAction }) {
   const images = Array.isArray(offering.images) ? offering.images.filter(Boolean) : []
-  const headingId = `learning-offering-${offering.id ?? index}`
+  const headingId = `learning-offering-${index}`
 
   return (
     <article className={`offering${images.length ? '' : ' offering--without-images'}`} aria-labelledby={headingId}>
@@ -13,7 +13,7 @@ export default function OfferingCard({ offering, index, onAction }) {
         {offering.description && <p className="offering-description">{offering.description}</p>}
         {offering.note && <p className="offering-note">{offering.note}</p>}
         {offering.action && (
-          <Button onClick={() => onAction?.(offering.id)}>
+          <Button onClick={() => onAction?.()}>
             {offering.action}
           </Button>
         )}

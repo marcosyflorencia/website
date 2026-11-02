@@ -4,8 +4,9 @@ import IntroductionMedia from '../media/IntroductionMedia.jsx'
 import Button from '../ui/Button.jsx'
 import texture from '../../assets/about-texture.png'
 import map from '../../assets/about-map.png'
-import { siteCopy } from '../../content/siteCopy.js'
 import './about.css'
+
+const ABOUT_CAPTION = 'Tango is more than performance. It is a way to connect and communicate through the embrace.'
 
 export default function AboutSection() {
   const root = useRef(null)
@@ -146,7 +147,7 @@ export default function AboutSection() {
         <div className="about-caption-band">
           <blockquote className="about-caption">
             <span className="about-caption-mark" aria-hidden="true">“</span>
-            <p>{siteCopy.introduction.caption}</p>
+            <p>{ABOUT_CAPTION}</p>
           </blockquote>
         </div>
       </div>
