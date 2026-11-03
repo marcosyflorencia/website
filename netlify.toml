@@ -1,8 +1,0 @@
-[build]
-  command = "npm run build"
-  publish = "dist"
-
-[build.environment]
-  NODE_VERSION = "22"
-  VITE_WIX_CLIENT_ID = "bd5f346a-8393-4e0d-adb4-19a780dde224"
-  VITE_WIX_CONTACT_FORM_ID = "3791a793-81c7-42e9-8035-fb8abf01f632"

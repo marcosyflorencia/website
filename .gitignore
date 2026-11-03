@@ -5,5 +5,5 @@ dist
 .env*
 !.env.example
 
-# Local Netlify folder
-.netlify
+# Local Cloudflare tooling
+.wrangler
