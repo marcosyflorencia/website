@@ -16,6 +16,7 @@
   --background-section-wine: linear-gradient(180.228271deg, var(--color-section-wine-1) 10.61%, var(--color-section-wine-2) 32.877%, var(--color-section-wine-3) 66.706%, var(--color-section-wine-4) 99.679%);
   --color-white: #fff;
   --color-accent: #e19371;
+  --color-error: #ffb4ab;
   --color-backdrop: rgb(15 0 3 / 75%);
   --font-nav-size: var(--font-size-body-bg);
   color: var(--color-cream);

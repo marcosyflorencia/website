@@ -38,6 +38,17 @@ export default function ContactForm() {
   }
 
   const sending = status === 'sending'
+  if (status === 'sent') {
+    return (
+      <div className="contact-form contact-form--success" role="status" aria-live="polite">
+        <p className="contact-status contact-status--success">
+          Your inquiry has been sent successfully!<br />
+          We’ll get back to you as soon as we can 😊
+        </p>
+      </div>
+    )
+  }
+
   return (
     <form className="contact-form" aria-label="Contact us" aria-busy={sending}
       onSubmit={handleSubmit} noValidate
@@ -48,8 +59,7 @@ export default function ContactForm() {
         <TextField label="Your message" name="message" multiline required disabled={sending} />
       </div>
       <Button type="submit" disabled={sending}>{sending ? 'Sending…' : 'Send Inquiry'}</Button>
-      {status === 'sent' && <p className="contact-status" role="status">Thank you. Your message has been sent.</p>}
-      {status === 'error' && <p className="contact-status" role="alert">{error}</p>}
+      {status === 'error' && <p className="contact-status contact-status--error" role="alert">{error}</p>}
     </form>
   )
 }

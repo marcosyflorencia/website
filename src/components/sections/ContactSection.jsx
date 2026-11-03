@@ -49,7 +49,7 @@ export default function ContactSection() {
         <div className="contact-content">
           <div className="contact-heading">
             <h2>Contact us</h2>
-            <p>You can leave us a message here or directly email us at <a href="mailto:marcosyflorenciatango@gmail.com">marcosyflorenciatango@gmail.com</a>. We will get back to you the soonest we can 😊</p>
+            <p>You can leave us a message here or directly email us at <a href="mailto:marcosyflorenciatango@gmail.com">marcosyflorenciatango@gmail.com</a>.</p>
           </div>
           <ContactForm />
         </div>

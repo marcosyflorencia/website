@@ -19,6 +19,9 @@
 .contact-fields { display: grid; gap: 1.5rem; }
 .contact-form > .button { justify-self: start; }
 .contact-status { margin: 0; font-size: var(--font-size-body-small); line-height: var(--line-height-body); }
+.contact-form--success { min-height: 13.6875rem; align-content: start; }
+.contact-status--success { color: var(--color-white); font-size: var(--font-size-body-medium); }
+.contact-status--error { color: var(--color-error); }
 #questions > * { opacity: var(--questions-opacity, 1); }
 @media (max-width: 700px) {
   .contact-background::after { content: ''; position: absolute; inset: 0; background: var(--color-backdrop); }

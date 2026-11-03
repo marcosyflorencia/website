@@ -1,6 +1,6 @@
 .text-field {
   --field-label-color: rgb(255 244 231 / 70%);
-  --field-error-color: #ffb4ab;
+  --field-error-color: var(--color-error);
   --field-label-size: 0.75rem;
   --field-hover-color: rgb(255 244 231 / 4%);
   width: 100%; min-width: 0;
