@@ -32,6 +32,7 @@ learning:
       Beginner-friendly practica at Ripley-Grier Midtown. Join the WhatsApp group for schedule updates, changes, or cancellations.
     images:
       - /media/learning/practica.png
+      - /media/learning/group-class.png
 
   - title: Milonga
     schedule: Fridays, 9 PM-1 AM
@@ -39,14 +40,6 @@ learning:
       Every Friday at Ukrainian East Village Restaurant. Experience tango in its authentic social setting.
     images:
       - /media/learning/milonga.png
-
-  - title: Intermediate Group Class
-    schedule: "Fridays, 8:00 PM - 9:00 PM"
-    description: |
-      Group class for intermediate dancers before milonga. Join the WhatsApp group for the most current class information.
-    action: Join WhatsApp Group
-    images:
-      - /media/learning/group-class.png
 
 hiring:
   - title: Salon Tango

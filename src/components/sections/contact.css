@@ -10,7 +10,7 @@
 .contact-background { position: sticky; top: 0; height: 100svh; margin-bottom: -100svh; overflow: hidden; z-index: 0; pointer-events: none; opacity: var(--contact-opacity, 0); }
 
 .page-sections > section.contact { scroll-margin-top: 0; }
-.contact-content { width: 36rem; max-width: calc(100% - var(--content-inline) - var(--content-inline)); margin: max(calc(var(--nav-height) + 2rem), 23.8386svh) 0 3rem var(--content-inline); padding: 2rem 1.5rem; background: var(--contact-panel-background); pointer-events: auto; flex-shrink: 0; }
+.contact-content { width: 36rem; max-width: calc(88.125% - 1.5rem); margin: max(calc(var(--nav-height) + 2rem), 23.8386svh) 0 3rem 11.875%; padding: 2rem 1.5rem; background: var(--contact-panel-background); pointer-events: auto; flex-shrink: 0; }
 .contact-content h2 { margin: 0; color: var(--color-white); font: var(--font-weight-bold) var(--font-size-title-big)/var(--line-height-title-big) var(--font-heading); }
 .contact-heading { display: grid; gap: 0.5rem; margin-bottom: 1.5rem; }
 .contact-heading p { margin: 0; color: var(--color-white); font-size: var(--font-size-body-medium); font-weight: var(--font-weight-light); line-height: 1.375rem; letter-spacing: -0.014375rem; }

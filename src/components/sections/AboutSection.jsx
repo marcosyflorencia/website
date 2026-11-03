@@ -66,7 +66,7 @@ export default function AboutSection() {
       stage.current.style.setProperty('--about-content-opacity', String(1 - captionOpacity))
       textColumn.current.inert = captionOpacity > 0.5
       textColumn.current.setAttribute('aria-hidden', String(captionOpacity > 0.5))
-      // Keep the caption fixed, then fade it once Learning Tango is already visible below.
+      // Fade the complete stage as Learning Tango enters from below.
       stage.current.style.opacity = String(1 - Math.max(0, Math.min(1, (window.innerHeight - rect.bottom) / 160)))
     }
     const schedule = () => { if (!frame) frame = requestAnimationFrame(update) }
