@@ -17,6 +17,8 @@
   --color-white: #fff;
   --color-accent: #e19371;
   --color-error: #ffb4ab;
+  --color-success: #b7e4c7;
+  --color-success-icon: #1f1f1f;
   --color-backdrop: rgb(15 0 3 / 75%);
   --font-nav-size: var(--font-size-body-bg);
   color: var(--color-cream);

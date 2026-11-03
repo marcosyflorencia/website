@@ -1,10 +1,11 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import ContactForm from '../forms/ContactForm.jsx'
 import SiteFooter from '../layout/SiteFooter.jsx'
 import hero from '../../assets/hero_img.png'
 import './contact.css'
 
 export default function ContactSection() {
+  const [submitted, setSubmitted] = useState(false)
   const root = useRef(null)
   const scene = useRef(null)
   useEffect(() => {
@@ -47,11 +48,13 @@ export default function ContactSection() {
       </div>
       <div ref={scene} className="contact-scene">
         <div className="contact-content">
-          <div className="contact-heading">
-            <h2>Contact us</h2>
-            <p>You can leave us a message here or directly email us at <a href="mailto:marcosyflorenciatango@gmail.com">marcosyflorenciatango@gmail.com</a>.</p>
-          </div>
-          <ContactForm />
+          {!submitted && (
+            <div className="contact-heading">
+              <h2>Contact us</h2>
+              <p>You can leave us a message here or directly email us at <a href="mailto:marcosyflorenciatango@gmail.com">marcosyflorenciatango@gmail.com</a>.</p>
+            </div>
+          )}
+          <ContactForm onSuccess={() => setSubmitted(true)} />
         </div>
       </div>
       <SiteFooter />
