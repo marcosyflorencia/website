@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react'
 import SocialLinks from './SocialLinks.jsx'
 import Button from '../ui/Button.jsx'
 import useActiveSection from '../../hooks/useActiveSection.js'
+import { mobileNavigationMedia } from '../../utils/responsive.js'
 import { navigationItems, navigationSectionIds } from '../../data/navigation.js'
+import { siteCopy } from '../../content/siteCopy.js'
 import logo from '../../assets/logo.svg'
 
 function MenuIcon() {
@@ -18,27 +20,39 @@ export default function SiteHeader() {
   const { headerRef, activeSection, showOverlay } = useActiveSection(navigationSectionIds)
 
   useEffect(() => {
-    const desktop = window.matchMedia('(min-width: 601px)')
-    const closeOnDesktop = event => { if (event.matches) setMenuOpen(false) }
+    const mobileNavigation = window.matchMedia(mobileNavigationMedia)
+    const closeOnDesktop = event => { if (!event.matches) setMenuOpen(false) }
     const closeOnEscape = event => { if (event.key === 'Escape') setMenuOpen(false) }
 
-    desktop.addEventListener('change', closeOnDesktop)
+    mobileNavigation.addEventListener('change', closeOnDesktop)
     window.addEventListener('keydown', closeOnEscape)
     return () => {
-      desktop.removeEventListener('change', closeOnDesktop)
+      mobileNavigation.removeEventListener('change', closeOnDesktop)
       window.removeEventListener('keydown', closeOnEscape)
     }
   }, [])
 
+  useEffect(() => {
+    if (!menuOpen) return undefined
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => { document.body.style.overflow = previousOverflow }
+  }, [menuOpen])
+
   return (
-    <header ref={headerRef} className="header" data-overlay={showOverlay || menuOpen}>
+    <header ref={headerRef} className="header" data-overlay={showOverlay || menuOpen} data-menu-open={menuOpen}>
       <a className="brand" href="#home" aria-label="Marcos and Florencia home">
         <img src={logo} alt="" width="69" height="43" />
       </a>
       <nav id="site-navigation" className="site-navigation" aria-label="Main navigation" data-open={menuOpen}>
-        {navigationItems.map(({ id, label }) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)} aria-current={activeSection === id ? 'location' : undefined}>
+        {navigationItems.map(({ id, label, href, external }) => <a key={id} href={href} onClick={() => setMenuOpen(false)} aria-current={!external && activeSection === id ? 'location' : undefined}
+          target={external ? '_blank' : undefined} rel={external ? 'noreferrer' : undefined}>
             {label}
           </a>)}
+        <div className="mobile-menu-actions">
+          <Button href="#contact" onClick={() => setMenuOpen(false)}>Send Inquiry</Button>
+          <Button href={siteCopy.socialLinks.booking} variant="secondary" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>Book Private class</Button>
+        </div>
       </nav>
       <SocialLinks />
       <Button

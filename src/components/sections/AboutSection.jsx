@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react'
 import { aboutChapters as chapters } from '../../data/about.js'
 import IntroductionMedia from '../media/IntroductionMedia.jsx'
 import Button from '../ui/Button.jsx'
-import texture from '../../assets/about-texture.png'
 import './about.css'
 
 const ABOUT_CAPTION = 'Tango is more than performance. It is a way to connect and communicate through the embrace.'
@@ -101,7 +100,7 @@ export default function AboutSection() {
   return (
     <section ref={root} className="about" id="about" aria-labelledby="about-title" tabIndex={-1} style={{ '--about-scroll-distance': `${scrollDistance}px` }}>
         <div ref={stage} className="about-stage">
-          <div className="about-background about-background--texture"><img src={texture} alt="" /></div>
+          <div className="about-background about-background--texture" />
         <div className="about-gallery" aria-hidden="true">
           {chapters.map((chapter, index) => (
             <div key={chapter.id} ref={element => { imageRefs.current[index] = element }} className="about-photo">
@@ -112,6 +111,8 @@ export default function AboutSection() {
         <div ref={textColumn} className="about-text-column">
           <div className="about-heading-row">
             <h2 className="about-title" id="about-title">About Us</h2>
+          </div>
+          <div className="about-story-layout">
             <div className="about-chapter-dots" role="group" aria-label="About Us chapters">
               {chapters.map((chapter, index) => <Button
                 key={chapter.id}
@@ -124,16 +125,16 @@ export default function AboutSection() {
                 onClick={() => goToChapter(index)}
               />)}
             </div>
-          </div>
-          <div className="about-story">
-            {chapters.map((chapter, index) => (
-              <article key={chapter.id} className="about-chapter" ref={element => { chapterRefs.current[index] = element }}>
-                <div className="about-copy">
-                  <p>{chapter.description}</p>
-                </div>
-                <IntroductionMedia url={chapter.mediaUrl} inline />
-              </article>
-            ))}
+            <div className="about-story">
+              {chapters.map((chapter, index) => (
+                <article key={chapter.id} className="about-chapter" ref={element => { chapterRefs.current[index] = element }}>
+                  <div className="about-copy">
+                    <p>{chapter.description}</p>
+                  </div>
+                  <IntroductionMedia url={chapter.mediaUrl} inline />
+                </article>
+              ))}
+            </div>
           </div>
         </div>
         <div className="about-caption-band">

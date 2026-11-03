@@ -7,11 +7,11 @@ import QuestionsSection from '../components/sections/QuestionsSection.jsx'
 import ContactSection from '../components/sections/ContactSection.jsx'
 import scrollToSection from '../utils/scrollToSection.js'
 
-export default function HomePage() {
+export default function HomePage({ onHeroReady }) {
   return (
     <>
       <SiteHeader />
-      <HeroSection />
+      <HeroSection onReady={onHeroReady} />
       <main className="page-sections">
         <AboutSection />
         <LearningSection onAction={() => scrollToSection('contact')} />

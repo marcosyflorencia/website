@@ -12,7 +12,7 @@ export default function TextField({ label, multiline = false, id: providedId, on
     return field.validationMessage
   }
   return (
-    <div className={`text-field${multiline ? ' text-field--multiline' : ''}`} data-error={Boolean(error)} data-disabled={Boolean(disabled)}>
+    <div className="text-field" data-error={Boolean(error)} data-disabled={Boolean(disabled)}>
       <div className="text-field-control">
         <Control {...props} id={id} disabled={disabled} placeholder=" " rows={multiline ? 3 : undefined}
           aria-invalid={Boolean(error)} aria-describedby={error ? `${id}-error` : undefined}

@@ -33,6 +33,6 @@ export default function IntroductionMedia({ url, inline = false }) {
   }
 
   return <span className={className}>
-    <img src={media.src} alt="" loading={inline ? 'lazy' : undefined} />
+    <img src={media.src} alt="" loading="lazy" decoding="async" />
   </span>
 }

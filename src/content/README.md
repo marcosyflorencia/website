@@ -2,6 +2,18 @@
 
 Edit `siteCopy.yaml` to update the introduction, About section, Learning Tango offerings, event-hiring section, or FAQ.
 
+## Shared external links
+
+Edit the centralized `socialLinks` block to update Facebook, Instagram, WhatsApp, or Eventbrite everywhere those links appear:
+
+```yaml
+socialLinks:
+  facebook: https://www.facebook.com/example
+  instagram: https://www.instagram.com/example/
+  whatsapp: https://chat.whatsapp.com/example
+  eventbrite: https://www.eventbrite.com/e/example
+```
+
 ## Longer paragraphs
 
 Keep the `|` and indent the paragraph by two extra spaces:
@@ -41,11 +53,11 @@ learning:
     description: |
       Write the offering description here.
     images:
-      - /media/learning/private-class.png
-      - /media/learning/private-class-2.jpg
+      - /media/learning/private-class.webp
+      - /media/learning/private-class-2.webp
 ```
 
-`schedule` is optional. Put image files in `public/media/learning`, then add their paths under that offering's `images` list. One image displays normally; two or more images automatically become a slideshow with previous and next buttons.
+`schedule` is optional. Put optimized WebP image files in `public/media/learning`, then add their paths under that offering's `images` list. Keep high-resolution source files outside `public` so they are not copied into the deployed site. One image displays normally; two or more images automatically become a slideshow with previous and next buttons.
 
 Learning action buttons are managed by the website code and do not need to be added here.
 

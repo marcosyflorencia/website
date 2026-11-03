@@ -7,11 +7,12 @@ export default function SiteFooter() {
     <footer className="site-footer">
       <div className="footer-main">
         <a className="footer-wordmark" href="#home" aria-label="Marcos and Florencia — back to top">
-          <img src={wordmark} alt="Marcos and Florencia" width="599" height="221" />
+          <img src={wordmark} alt="Marcos and Florencia" width="599" height="221" loading="lazy" decoding="async" />
         </a>
 
         <nav className="footer-navigation" aria-label="Footer navigation">
-          {navigationItems.map(({ id, label }) => <a key={id} href={`#${id}`}>{label}</a>)}
+          {navigationItems.map(({ id, label, href, external }) => <a key={id} href={href}
+            target={external ? '_blank' : undefined} rel={external ? 'noreferrer' : undefined}>{label}</a>)}
         </nav>
       </div>
 

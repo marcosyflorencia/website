@@ -8,7 +8,7 @@ const VIDEO_TITLE_SUFFIX = 'performance video'
 
 function Thumbnail({ src }) {
   if (!src) return null
-  return <span className="video-artwork" aria-hidden="true"><img src={src} alt="" draggable="false" style={{ width: '100%', height: '100%', left: 0, top: 0, objectFit: 'cover' }} /></span>
+  return <span className="video-artwork" aria-hidden="true"><img src={src} alt="" draggable="false" loading="lazy" decoding="async" /></span>
 }
 
 export default function VideoGallery({ videos, poster }) {

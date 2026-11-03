@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import ContactForm from '../forms/ContactForm.jsx'
 import SiteFooter from '../layout/SiteFooter.jsx'
-import hero from '../../assets/hero_img.png'
+import { compactLayoutMedia } from '../../utils/responsive.js'
+import hero from '../../assets/hero_img.webp'
+import heroMobile from '../../assets/hero_mobile.webp'
 import './contact.css'
 
 export default function ContactSection() {
@@ -44,16 +46,19 @@ export default function ContactSection() {
   return (
     <section ref={root} id="contact" className="contact" tabIndex={-1} aria-label="Contact us">
       <div className="contact-background" aria-hidden="true">
-        <img className="contact-image" src={hero} alt="" />
+        <picture>
+          <source media={compactLayoutMedia} srcSet={heroMobile} />
+          <img className="contact-image" src={hero} alt="" loading="lazy" decoding="async" />
+        </picture>
       </div>
       <div ref={scene} className="contact-scene">
         <div className="contact-content">
-          {!submitted && (
-            <div className="contact-heading">
-              <h2>Contact us</h2>
+          <div className="contact-heading">
+            <h2>Contact us</h2>
+            {!submitted && (
               <p>You can leave us a message here or directly email us at <a href="mailto:marcosyflorenciatango@gmail.com">marcosyflorenciatango@gmail.com</a>.</p>
-            </div>
-          )}
+            )}
+          </div>
           <ContactForm onSuccess={() => setSubmitted(true)} />
         </div>
       </div>

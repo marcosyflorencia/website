@@ -1,5 +1,7 @@
 import './button.css'
 
-export default function Button({ variant = 'primary', size = 'big', type = 'button', className = '', children, ...props }) {
-  return <button className={`button button--${variant} button--${size} ${className}`.trim()} type={type} {...props}>{children}</button>
+export default function Button({ variant = 'primary', type = 'button', className = '', href, children, ...props }) {
+  const classes = `button button--${variant} ${className}`.trim()
+  if (href) return <a className={classes} href={href} {...props}>{children}</a>
+  return <button className={classes} type={type} {...props}>{children}</button>
 }

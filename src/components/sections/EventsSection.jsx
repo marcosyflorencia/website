@@ -15,16 +15,16 @@ export default function EventsSection({ onInquiry }) {
       <div className="events-inner">
         <SkylineDivider />
       </div>
-        <div className="events-intro">
-          <div className="events-heading">
-            <h2 id="events-title">{EVENTS_TITLE}</h2>
-            <Button onClick={onInquiry}>{EVENTS_ACTION}</Button>
-          </div>
-          <div className="events-description">
-            <p>{EVENTS_DESCRIPTION}</p>
-            <p>{GALLERY_INTRODUCTION}</p>
-          </div>
+      <div className="events-intro">
+        <div className="events-heading">
+          <h2 id="events-title">{EVENTS_TITLE}</h2>
+          <Button onClick={onInquiry}>{EVENTS_ACTION}</Button>
         </div>
+        <div className="events-description">
+          <p>{EVENTS_DESCRIPTION}</p>
+          <p>{GALLERY_INTRODUCTION}</p>
+        </div>
+      </div>
       <div className="events-inner">
         <VideoGallery videos={performanceVideos} poster={performancePoster} />
       </div>

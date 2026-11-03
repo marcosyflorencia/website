@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Button from '../ui/Button.jsx'
 
 function ArrowIcon({ direction }) {
@@ -12,6 +12,7 @@ function ArrowIcon({ direction }) {
 
 export default function OfferingCarousel({ images, offeringTitle }) {
   const [activeIndex, setActiveIndex] = useState(0)
+  const touchStart = useRef(null)
   const hasMultipleImages = images.length > 1
 
   useEffect(() => {
@@ -36,8 +37,28 @@ export default function OfferingCarousel({ images, offeringTitle }) {
     setActiveIndex(currentIndex => (currentIndex + 1) % images.length)
   }
 
+  const handleTouchStart = event => {
+    if (!hasMultipleImages) return
+    const touch = event.changedTouches[0]
+    touchStart.current = { x: touch.clientX, y: touch.clientY }
+  }
+
+  const handleTouchEnd = event => {
+    const start = touchStart.current
+    touchStart.current = null
+    if (!start || !hasMultipleImages) return
+
+    const touch = event.changedTouches[0]
+    const deltaX = touch.clientX - start.x
+    const deltaY = touch.clientY - start.y
+    if (Math.abs(deltaX) < 40 || Math.abs(deltaX) <= Math.abs(deltaY)) return
+
+    if (deltaX > 0) showPrevious()
+    else showNext()
+  }
+
   return (
-    <div className="offering-carousel">
+    <div className="offering-carousel" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
       <div className="offering-carousel-images">
         {images.map((image, index) => (
           <img
@@ -46,6 +67,7 @@ export default function OfferingCarousel({ images, offeringTitle }) {
             src={image}
             alt=""
             loading="lazy"
+            decoding="async"
             data-active={index === activeIndex}
           />
         ))}

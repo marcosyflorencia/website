@@ -2,44 +2,51 @@
 # Edit the text after each colon. Keep the indentation and field names unchanged.
 # Use the | character for paragraphs that span more than one line.
 
+socialLinks:
+  facebook: https://www.facebook.com/marcospereirayflorenciaborgnia
+  instagram: https://www.instagram.com/marcosyflorencia/
+  whatsapp: https://chat.whatsapp.com/KAd90y3bu9jKkgmBwB6TrW?mode=gi_t
+  eventbrite: https://www.eventbrite.com/e/tango-in-nyc-esa-milonga-fridays-east-village-tickets-1979695349081
+  booking: https://book.marcosyflorencia.com/
+
 introduction:
   - description: |
-      Born in Argentina, the birthplace of tango, Marcos and Florencia have studied with maestros and milongueros since their teenage years.
-    mediaUrl: /media/introduction/about_img_1.png
+      Born in Argentina, Marcos and Florencia trained with tango maestros and milongueros from their teens.
+    mediaUrl: /media/introduction/about_img_1.webp
 
   - description: |
-      In 2015, they earned second place at the prestigious Buenos Aires City Tango Championship.
-    mediaUrl: /media/introduction/about_img_2.png
+      2nd place in 2015 and 3rd place in 2024 at the prestigious Buenos Aires City Tango Championship.
+    mediaUrl: /media/introduction/about_img_2.webp
 
   - description: |
-      From 2017 to 2023, they performed worldwide and were multiple-time World Tango Championship finalists.
+      Five-time World Tango Championship finalists 2017 - 2023.
     mediaUrl: "https://static.wixstatic.com/media/bc812c_f63d91135efa4e449ef01865c4b71fa8~mv2.jpeg"
 
   - description: |
-      Recognized by the U.S. Congress for their dedication to tango, they are now based in New York City, teaching and performing across the US.
-    mediaUrl: /media/introduction/about_img_4.png
+      Recognized by the U.S. Congress, they are now based in New York City, teaching and performing across the US.
+    mediaUrl: /media/introduction/about_img_4.webp
 
 learning:
   - title: Private lessons with Marcos and Florencia
     description: |
       Classes are tailored to your needs and available in Manhattan or Brooklyn. Inquire about pricing, location, and scheduling.
     images:
-      - /media/learning/private-class.png
+      - /media/learning/private-class.webp
 
   - title: Guided Practica
     schedule: "Mondays, 6:30PM - 9:30PM"
     description: |
-      Beginner-friendly practica at Ripley-Grier Midtown. Join the WhatsApp group for schedule updates, changes, or cancellations.
+      Beginner-friendly practica at Ripley-Grier Midtown. Join WhatsApp news for schedule updates, changes, or cancellations.
     images:
-      - /media/learning/practica.png
-      - /media/learning/group-class.png
+      - /media/learning/practica.webp
+      - /media/learning/group-class.webp
 
   - title: Milonga
     schedule: Fridays, 9 PM-1 AM
     description: |
       Every Friday at Ukrainian East Village Restaurant. Experience tango in its authentic social setting.
     images:
-      - /media/learning/milonga.png
+      - /media/learning/milonga.webp
 
 hiring:
   - title: Salon Tango

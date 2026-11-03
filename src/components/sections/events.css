@@ -13,19 +13,19 @@
 .events-description { display: flex; flex-direction: column; gap: 1rem; }
 .events h2 { margin: 0; color: var(--color-white); font: var(--font-weight-bold) var(--font-size-title-big)/var(--line-height-title-big) var(--font-heading); }
 .events-intro p { margin: 0; max-width: 52rem; font-size: var(--font-size-body-bg); font-weight: var(--font-weight-light); line-height: var(--line-height-body); }
-.video-gallery { width: 100%; margin-inline: auto; display: grid; grid-template-columns: minmax(0, 1fr) 10rem; gap: 1.5rem; align-items: center; }
-.video-player { width: 100%; margin-left: 0; margin-right: auto; aspect-ratio: 16 / 9; background: var(--events-background); position: relative; }
+.video-gallery { width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) 10rem; gap: 1.5rem; align-items: center; }
+.video-player { width: 100%; aspect-ratio: 16 / 9; background: var(--events-background); position: relative; }
 .video-player iframe, .video-player video { display: block; width: 100%; height: 100%; border: 0; }
 .video-player video { object-fit: contain; }
 .video-poster { position: relative; display: block; width: 100%; height: 100%; background: var(--events-background); padding: 0; border: 0; color: var(--color-cream); cursor: pointer; }
 .video-poster > .video-artwork { position: absolute; top: 50%; left: 0; right: 0; height: auto; aspect-ratio: 1219 / 506; transform: translateY(-50%); }
 .video-artwork { display: block; position: relative; height: 100%; width: 100%; overflow: hidden; }
-.video-artwork img { position: absolute; max-width: none; }
+.video-artwork img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .video-play-caption { position: absolute; inset: auto 0 0; min-height: 12.46%; display: flex; align-items: center; padding: 0.5rem 1.5rem; font-size: var(--font-size-button); font-weight: var(--font-weight-medium); }
 .video-poster:hover .video-play-caption { color: var(--color-accent); }
-.video-choices { display: grid; grid-template-columns: 1fr; gap: 0.75rem; margin-top: 0; }
+.video-choices { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
 .video-choice { padding: 0; border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--color-cream); cursor: pointer; min-width: 0; }
-.video-thumbnail { display: block; width: 100%; margin-inline: auto; aspect-ratio: 280 / 175; border: 2px solid transparent; border-radius: 0.25rem; overflow: hidden; }
+.video-thumbnail { display: block; width: 100%; aspect-ratio: 280 / 175; border: 2px solid transparent; border-radius: 0.25rem; overflow: hidden; }
 .video-choice-label { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.375rem 0 0.5rem; font-size: var(--font-size-button); line-height: var(--line-height-button); }
 .video-selected-icon { display: none; }
 .video-choice[aria-pressed="true"] { color: var(--color-accent); border-bottom-color: var(--color-accent); }
@@ -33,23 +33,18 @@
 .video-choice[aria-pressed="true"] .video-selected-icon { display: inline; }
 .video-choice:hover { color: var(--color-accent); }
 @media (max-width: 1050px) {
-  .events-inner { width: calc(100% - 3rem); margin-inline: auto; }
+  .events-inner { width: calc(100% - 3rem); }
   .events-intro { width: min(calc(100% - 3rem), 70rem); gap: 1.5rem; }
-  .video-choices { gap: 0.75rem; }
-  .video-choice-label { gap: 0.5rem; }
 }
-@media (max-width: 800px) {
+@media (max-width: 900px), (max-width: 1200px) and (orientation: portrait) {
+  .events-intro { grid-template-columns: 1fr; justify-items: start; }
   .video-gallery { grid-template-columns: 1fr; gap: 1.25rem; align-items: start; }
   .video-choices { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 @media (max-width: 600px) {
   .events { padding: 0 0 2rem; }
   .skyline-divider { margin-bottom: 2rem; }
-  .events-intro { grid-template-columns: 1fr; gap: 1.5rem; justify-items: start; }
-  .events-heading { padding: 0; }
-  .events-intro p { padding: 0; }
-  .video-gallery { width: 100%; }
-  .video-player { width: 100%; aspect-ratio: 16 / 9; }
-  .video-choices { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 0; }
+  .events-intro { gap: 1.5rem; }
+  .video-choices { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .video-play-caption { padding: 0.25rem 0.5rem; font-size: var(--font-size-body-small); }
 }
