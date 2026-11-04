@@ -1,17 +1,17 @@
 import { useEffect, useRef, useState } from 'react'
 import { aboutChapters as chapters } from '../../data/about.js'
+import captionImage from '../../assets/caption_img.png'
 import IntroductionMedia from '../media/IntroductionMedia.jsx'
 import Button from '../ui/Button.jsx'
 import './about.css'
 
-const ABOUT_CAPTION = 'Tango is more than performance. It is a way to connect and communicate through the embrace.'
+const ABOUT_CAPTION = 'Tango is more than performance. It is a way to connect and communicate.'
 
 export default function AboutSection() {
   const root = useRef(null)
+  const stage = useRef(null)
   const chapterRefs = useRef([])
   const imageRefs = useRef([])
-  const stage = useRef(null)
-  const textColumn = useRef(null)
   const [activeChapter, setActiveChapter] = useState(0)
 
   useEffect(() => {
@@ -22,10 +22,6 @@ export default function AboutSection() {
       frame = 0
       if (motion.matches) {
         stage.current.style.opacity = ''
-        stage.current.style.removeProperty('--about-caption-opacity')
-        stage.current.style.removeProperty('--about-content-opacity')
-        textColumn.current.inert = false
-        textColumn.current.removeAttribute('aria-hidden')
         chapterRefs.current.forEach(chapter => {
           chapter.style.opacity = ''
           chapter.style.transform = ''
@@ -34,12 +30,11 @@ export default function AboutSection() {
         return
       }
       const rect = root.current.getBoundingClientRect()
+      const stageRect = stage.current.getBoundingClientRect()
       const travel = Math.max(0, -rect.top)
       const step = 320
-      const ease = value => {
-        const t = Math.min(1, Math.max(0, value))
-        return t * t * (3 - 2 * t)
-      }
+      const exitProgress = Math.min(1, Math.max(0, -stageRect.top / (window.innerHeight * 0.5)))
+      stage.current.style.opacity = String(1 - exitProgress)
       const progress = Math.min(chapters.length - 1, travel / step)
       const index = Math.floor(progress)
       // Space the moving chapters by their measured height so their text never overlaps.
@@ -59,14 +54,6 @@ export default function AboutSection() {
         image.style.opacity = i === visibleImage ? '1' : '0'
         image.style.visibility = i === visibleImage ? 'visible' : 'hidden'
       })
-      const captionStart = (chapters.length - 1) * step + 160
-      const captionOpacity = ease((travel - captionStart) / 200)
-      stage.current.style.setProperty('--about-caption-opacity', String(captionOpacity))
-      stage.current.style.setProperty('--about-content-opacity', String(1 - captionOpacity))
-      textColumn.current.inert = captionOpacity > 0.5
-      textColumn.current.setAttribute('aria-hidden', String(captionOpacity > 0.5))
-      // Fade the complete stage as Learning Tango enters from below.
-      stage.current.style.opacity = String(1 - Math.max(0, Math.min(1, (window.innerHeight - rect.bottom) / 160)))
     }
     const schedule = () => { if (!frame) frame = requestAnimationFrame(update) }
     window.addEventListener('scroll', schedule, { passive: true })
@@ -98,52 +85,55 @@ export default function AboutSection() {
   }
 
   return (
-    <section ref={root} className="about" id="about" aria-labelledby="about-title" tabIndex={-1} style={{ '--about-scroll-distance': `${scrollDistance}px` }}>
+    <div className="about-sequence">
+      <img className="about-caption-image" src={captionImage} alt="" aria-hidden="true" />
+      <section ref={root} className="about" id="about" aria-labelledby="about-title" tabIndex={-1} style={{ '--about-scroll-distance': `${scrollDistance}px` }}>
         <div ref={stage} className="about-stage">
           <div className="about-background about-background--texture" />
-        <div className="about-gallery" aria-hidden="true">
-          {chapters.map((chapter, index) => (
-            <div key={chapter.id} ref={element => { imageRefs.current[index] = element }} className="about-photo">
-              <IntroductionMedia url={chapter.mediaUrl} />
-            </div>
-          ))}
-        </div>
-        <div ref={textColumn} className="about-text-column">
-          <div className="about-heading-row">
-            <h2 className="about-title" id="about-title">About Us</h2>
+          <div className="about-gallery" aria-hidden="true">
+            {chapters.map((chapter, index) => (
+              <div key={chapter.id} ref={element => { imageRefs.current[index] = element }} className="about-photo">
+                <IntroductionMedia url={chapter.mediaUrl} />
+              </div>
+            ))}
           </div>
-          <div className="about-story-layout">
-            <div className="about-chapter-dots" role="group" aria-label="About Us chapters">
-              {chapters.map((chapter, index) => <Button
-                key={chapter.id}
-                variant="unstyled"
-                className="about-chapter-dot"
-                type="button"
-                aria-label={`Show chapter ${index + 1} of ${chapters.length}`}
-                aria-current={activeChapter === index ? 'step' : undefined}
-                data-complete={index < activeChapter}
-                onClick={() => goToChapter(index)}
-              />)}
+          <div className="about-text-column">
+            <div className="about-heading-row">
+              <h2 className="about-title" id="about-title">About Us</h2>
             </div>
-            <div className="about-story">
-              {chapters.map((chapter, index) => (
-                <article key={chapter.id} className="about-chapter" ref={element => { chapterRefs.current[index] = element }}>
-                  <div className="about-copy">
-                    <p>{chapter.description}</p>
-                  </div>
-                  <IntroductionMedia url={chapter.mediaUrl} inline />
-                </article>
-              ))}
+            <div className="about-story-layout">
+              <div className="about-chapter-dots" role="group" aria-label="About Us chapters">
+                {chapters.map((chapter, index) => <Button
+                  key={chapter.id}
+                  variant="unstyled"
+                  className="about-chapter-dot"
+                  type="button"
+                  aria-label={`Show chapter ${index + 1} of ${chapters.length}`}
+                  aria-current={activeChapter === index ? 'step' : undefined}
+                  data-complete={index < activeChapter}
+                  onClick={() => goToChapter(index)}
+                />)}
+              </div>
+              <div className="about-story">
+                {chapters.map((chapter, index) => (
+                  <article key={chapter.id} className="about-chapter" ref={element => { chapterRefs.current[index] = element }}>
+                    <div className="about-copy">
+                      <p>{chapter.description}</p>
+                    </div>
+                    <IntroductionMedia url={chapter.mediaUrl} inline />
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-        <div className="about-caption-band">
-          <blockquote className="about-caption">
-            <span className="about-caption-mark" aria-hidden="true">“</span>
-            <p>{ABOUT_CAPTION}</p>
-          </blockquote>
-        </div>
-      </div>
-    </section>
+      </section>
+      <section className="about-caption-band" aria-label="Our approach to tango">
+        <blockquote className="about-caption">
+          <span className="about-caption-mark" aria-hidden="true">“</span>
+          <p>{ABOUT_CAPTION}</p>
+        </blockquote>
+      </section>
+    </div>
   )
 }

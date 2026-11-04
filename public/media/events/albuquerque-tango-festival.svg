@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 402 378" role="img" aria-labelledby="title">
+  <title id="title">Albuquerque Tango Festival</title>
+  <g font-family="Arial, Helvetica, sans-serif" font-weight="700" letter-spacing="-4">
+    <text x="35" y="84" fill="#263d5d" font-size="72">ALBU</text>
+    <text x="35" y="166" fill="#263d5d" font-size="72">QUER</text>
+    <text x="35" y="248" fill="#e9a43a" font-size="72">Q</text>
+    <text x="105" y="248" fill="#263d5d" font-size="72">UE</text>
+  </g>
+  <g fill="#20242b" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">
+    <text x="286" y="215">TANGO</text>
+    <text x="286" y="244">FESTIVAL</text>
+  </g>
+  <path d="M73 222c4 67 75 111 178 112 24 0 45-2 64-6" fill="none" stroke="#e9a43a" stroke-width="13" stroke-linecap="round"/>
+  <path d="M246 334c57-3 104-25 130-68" fill="none" stroke="#263d5d" stroke-width="13" stroke-linecap="round"/>
+</svg>

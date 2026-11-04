@@ -1,0 +1,43 @@
+.featured-events-slider {
+  width: 100%;
+  margin: 0 0 4.5rem;
+  overflow: hidden;
+  border-block: 1px solid var(--events-divider-muted);
+}
+.featured-events-track {
+  width: max-content;
+  display: flex;
+  padding-block: 0.25rem;
+  animation: featured-events-loop-right 36s linear infinite;
+  will-change: transform;
+}
+.featured-events-slider:hover .featured-events-track,
+.featured-events-slider:focus .featured-events-track { animation-play-state: paused; }
+.featured-events-group { display: flex; gap: 0.5rem; padding-right: 0.5rem; }
+.featured-event-card {
+  width: clamp(12rem, 15vw, 15rem);
+  height: 6rem;
+  flex: 0 0 auto;
+  display: flex;
+  overflow: hidden;
+  border: 1px solid var(--events-divider-muted);
+  background: var(--events-card-surface);
+  color: var(--events-background);
+}
+.featured-event-card img { display: block; width: 40%; height: 100%; flex: 0 0 40%; padding: 0.25rem; object-fit: contain; }
+.featured-event-card span { display: flex; min-width: 0; flex: 1 1 auto; align-items: center; padding: 0.5rem; border-left: 1px solid var(--events-divider-muted); font-size: var(--font-size-body-small); font-weight: var(--font-weight-medium); line-height: 1.25; }
+.featured-event-card--name-only { align-items: center; justify-content: center; padding: 0.5rem; background: var(--events-card-surface); color: var(--events-background); text-align: center; }
+.featured-event-card--name-only span { justify-content: center; padding: 0; border: 0; font: var(--font-weight-bold) var(--font-size-body-bg)/1.25 var(--font-heading); }
+@keyframes featured-events-loop-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+@media (max-width: 600px) {
+  .featured-events-slider { margin-bottom: 3.5rem; }
+  .featured-event-card { width: 11rem; height: 5.75rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .featured-events-slider { overflow-x: auto; }
+  .featured-events-track { animation: none; transform: none; will-change: auto; }
+  .featured-events-group[aria-hidden="true"] { display: none; }
+}

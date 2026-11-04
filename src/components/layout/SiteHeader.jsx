@@ -3,8 +3,7 @@ import SocialLinks from './SocialLinks.jsx'
 import Button from '../ui/Button.jsx'
 import useActiveSection from '../../hooks/useActiveSection.js'
 import { mobileNavigationMedia } from '../../utils/responsive.js'
-import { navigationItems, navigationSectionIds } from '../../data/navigation.js'
-import { siteCopy } from '../../content/siteCopy.js'
+import { headerNavigationItems, navigationSectionIds } from '../../data/navigation.js'
 import logo from '../../assets/logo.svg'
 
 function MenuIcon() {
@@ -45,13 +44,12 @@ export default function SiteHeader() {
         <img src={logo} alt="" width="69" height="43" />
       </a>
       <nav id="site-navigation" className="site-navigation" aria-label="Main navigation" data-open={menuOpen}>
-        {navigationItems.map(({ id, label, href, external }) => <a key={id} href={href} onClick={() => setMenuOpen(false)} aria-current={!external && activeSection === id ? 'location' : undefined}
+        {headerNavigationItems.map(({ id, label, href, external }) => <a key={id} href={href} onClick={() => setMenuOpen(false)} aria-current={!external && activeSection === id ? 'location' : undefined}
           target={external ? '_blank' : undefined} rel={external ? 'noreferrer' : undefined}>
             {label}
           </a>)}
         <div className="mobile-menu-actions">
           <Button href="#contact" onClick={() => setMenuOpen(false)}>Send Inquiry</Button>
-          <Button href={siteCopy.socialLinks.booking} variant="secondary" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>Book Private class</Button>
         </div>
       </nav>
       <SocialLinks />

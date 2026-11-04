@@ -1,6 +1,8 @@
 .events {
   --events-background: #0b0b0a;
   --events-divider: #c4c4c4;
+  --events-divider-muted: rgb(255 244 231 / 20%);
+  --events-card-surface: #d0ccc6;
   background: var(--events-background);
   padding: 0 0 4rem;
 }

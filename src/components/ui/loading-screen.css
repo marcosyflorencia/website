@@ -32,34 +32,26 @@
 .loading-screen[data-exiting="true"] .loading-screen__content { transform: translateY(-0.75rem); }
 .loading-screen__content img { display: block; width: 100%; height: auto; }
 
-.loading-screen__progress {
-  position: relative;
-  width: min(100%, 18rem);
-  height: 1px;
-  overflow: hidden;
-  background: color-mix(in srgb, var(--color-cream) 24%, transparent);
+.loading-screen__wave {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 2rem;
 }
 
-.loading-screen__progress span {
-  position: absolute;
-  inset: 0;
-  background: var(--color-accent);
-  transform: translateX(-100%);
-  animation: loading-screen-progress 1.4s ease-in-out infinite;
+.loading-screen__wave span {
+  width: 0.4375rem;
+  height: 0.4375rem;
+  border-radius: 50%;
+  background: var(--color-white);
+  animation: loading-screen-dot-wave 1.2s ease-in-out infinite;
+  animation-delay: calc(var(--wave-index) * -100ms);
 }
 
-.loading-screen__label {
-  font-family: var(--font-nav);
-  font-size: var(--font-size-body-medium);
-  line-height: 1;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-@keyframes loading-screen-progress {
-  0% { transform: translateX(-100%); }
-  55% { transform: translateX(0); }
-  100% { transform: translateX(100%); }
+@keyframes loading-screen-dot-wave {
+  0%, 100% { opacity: 0.35; transform: translateY(0.375rem) scale(0.8); }
+  50% { opacity: 1; transform: translateY(-0.375rem) scale(1); }
 }
 
 @media (max-width: 600px) {
@@ -68,5 +60,5 @@
 
 @media (prefers-reduced-motion: reduce) {
   .loading-screen, .loading-screen__content { transition-duration: 1ms; }
-  .loading-screen__progress span { width: 65%; animation: none; transform: none; }
+  .loading-screen__wave span { animation: none; opacity: 0.7; transform: none; }
 }

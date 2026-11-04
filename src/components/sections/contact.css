@@ -2,15 +2,13 @@
   --contact-panel-background: rgb(13 13 13 / 50%);
   position: relative;
   min-height: 100svh;
-  background: var(--color-background);
   isolation: isolate;
 }
 .contact:focus { outline: none; }
-.contact-scene { position: relative; min-height: 100svh; display: flex; align-items: flex-start; z-index: 1; pointer-events: none; visibility: var(--contact-visibility, hidden); opacity: var(--contact-opacity, 0); }
-.contact-background { position: sticky; top: 0; height: 100svh; margin-bottom: -100svh; overflow: hidden; z-index: 0; pointer-events: none; opacity: var(--contact-opacity, 0); }
+.contact-scene { position: relative; min-height: 100svh; display: flex; align-items: flex-start; z-index: 1; }
 
 .page-sections > section.contact { scroll-margin-top: 0; }
-.contact-content { width: 36rem; max-width: calc(88.125% - 1.5rem); margin: max(calc(var(--nav-height) + 2rem), 23.8386svh) 0 3rem 11.875%; padding: 2rem 1.5rem; background: var(--contact-panel-background); pointer-events: auto; flex-shrink: 0; }
+.contact-content { width: 36rem; max-width: calc(88.125% - 1.5rem); margin: max(calc(var(--nav-height) + 2rem), 23.8386svh) 0 3rem 11.875%; padding: 2rem 1.5rem; background: var(--contact-panel-background); flex-shrink: 0; }
 .contact-content h2 { margin: 0; color: var(--color-white); font: var(--font-weight-bold) var(--font-size-title-big)/var(--line-height-title-big) var(--font-heading); }
 .contact-heading { display: grid; gap: 0.5rem; margin-bottom: 1.5rem; }
 .contact-heading p { margin: 0; color: var(--color-white); font-size: var(--font-size-body-medium); font-weight: var(--font-weight-light); line-height: 1.375rem; letter-spacing: -0.014375rem; }
@@ -26,17 +24,12 @@
 .contact-success-icon { display: inline-grid; flex: 0 0 auto; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; color: var(--color-success-icon); background: var(--color-success); }
 .contact-success-icon svg { display: block; }
 .contact-status--error { color: var(--color-error); }
-#questions > * { opacity: var(--questions-opacity, 1); }
 @media (max-width: 900px), (max-width: 1200px) and (orientation: portrait) {
   .contact { --contact-form-inline: max(3rem, calc((100% - 36rem) / 2 + 1.5rem)); }
-  .contact-background::after { content: ''; position: absolute; inset: 0; background: var(--color-backdrop); }
   .contact-content { width: calc(100% - 6rem); max-width: 36rem; margin-inline: auto; }
 }
 @media (max-width: 700px) {
   .contact { --contact-form-inline: max(3rem, calc((100% - 31rem) / 2 + 1.5rem)); }
   .contact-content { width: calc(100% - 3rem); max-width: 31rem; margin-inline: auto; }
 
-}
-@media (prefers-reduced-motion: reduce) {
-  #questions > * { opacity: 1; }
 }
