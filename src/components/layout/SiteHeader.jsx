@@ -4,6 +4,7 @@ import Button from '../ui/Button.jsx'
 import useActiveSection from '../../hooks/useActiveSection.js'
 import { mobileNavigationMedia } from '../../utils/responsive.js'
 import { headerNavigationItems, navigationSectionIds } from '../../data/navigation.js'
+import { siteCopy } from '../../content/siteCopy.js'
 import logo from '../../assets/logo.svg'
 
 function MenuIcon() {
@@ -49,7 +50,8 @@ export default function SiteHeader() {
             {label}
           </a>)}
         <div className="mobile-menu-actions">
-          <Button href="#contact" onClick={() => setMenuOpen(false)}>Send Inquiry</Button>
+          <Button href={siteCopy.socialLinks.booking} target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>Book private class</Button>
+          <Button href={siteCopy.socialLinks.whatsapp} variant="secondary" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>Join WhatsApp news</Button>
         </div>
       </nav>
       <SocialLinks />
