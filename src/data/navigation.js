@@ -11,6 +11,7 @@ export const navigationItems = [
 export const headerNavigationItems = [
   ...navigationItems.filter(item => item.id !== 'booking'),
   { id: 'contact', label: 'Contact', href: '#contact' },
+  { id: 'booking', label: 'Book class', href: siteCopy.socialLinks.booking, external: true },
 ]
 
-export const navigationSectionIds = headerNavigationItems.map(item => item.id)
+export const navigationSectionIds = headerNavigationItems.filter(item => !item.external).map(item => item.id)

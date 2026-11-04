@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import SiteHeader from '../components/layout/SiteHeader.jsx'
 import HeroSection from '../components/sections/HeroSection.jsx'
 import AboutSection from '../components/sections/AboutSection.jsx'
@@ -11,9 +12,11 @@ import hero from '../assets/hero_img.webp'
 import heroMobile from '../assets/hero_mobile.webp'
 
 export default function HomePage({ onHeroReady }) {
+  const [contactVisible, setContactVisible] = useState(false)
+
   return (
     <>
-      <picture className="site-backdrop" aria-hidden="true">
+      <picture className="site-backdrop" data-visible={contactVisible} aria-hidden="true">
         <source media={compactLayoutMedia} srcSet={heroMobile} />
         <img src={hero} alt="" decoding="async" />
       </picture>
@@ -24,7 +27,7 @@ export default function HomePage({ onHeroReady }) {
         <LearningSection onAction={() => scrollToSection('contact')} />
         <EventsSection onInquiry={() => scrollToSection('contact')} />
         <QuestionsSection />
-        <ContactSection />
+        <ContactSection onVisibilityChange={setContactVisible} />
       </main>
     </>
   )

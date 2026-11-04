@@ -10,7 +10,7 @@
 .events-inner { width: min(calc(100% - 3rem), 100rem); margin-inline: auto; }
 .skyline-divider { display: block; width: 100%; height: auto; margin-bottom: 3rem; color: var(--events-divider); }
 .skyline-divider path { stroke: currentColor; stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; }
-.events-intro { width: min(calc(100% - 10rem), 70rem); margin: 0 auto 2rem; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); align-items: start; gap: 3rem; }
+.events-intro { width: min(calc(100% - var(--section-inline) - var(--section-inline)), var(--section-content-max)); margin: 0 auto 2rem var(--section-inline); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); align-items: start; gap: 3rem; }
 .events-heading { display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
 .events-description { display: flex; flex-direction: column; gap: 1rem; }
 .events h2 { margin: 0; color: var(--color-white); font: var(--font-weight-bold) var(--font-size-title-big)/var(--line-height-title-big) var(--font-heading); }
@@ -36,7 +36,7 @@
 .video-choice:hover { color: var(--color-accent); }
 @media (max-width: 1050px) {
   .events-inner { width: calc(100% - 3rem); }
-  .events-intro { width: min(calc(100% - 3rem), 70rem); gap: 1.5rem; }
+  .events-intro { gap: 1.5rem; }
 }
 @media (max-width: 900px), (max-width: 1200px) and (orientation: portrait) {
   .events-intro { grid-template-columns: 1fr; justify-items: start; }

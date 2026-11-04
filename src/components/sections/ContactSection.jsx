@@ -1,13 +1,21 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import ContactForm from '../forms/ContactForm.jsx'
 import SiteFooter from '../layout/SiteFooter.jsx'
 import './contact.css'
 
-export default function ContactSection() {
+export default function ContactSection({ onVisibilityChange }) {
   const [submitted, setSubmitted] = useState(false)
+  const root = useRef(null)
+
+  useEffect(() => {
+    const section = root.current
+    const observer = new IntersectionObserver(([entry]) => onVisibilityChange(entry.isIntersecting))
+    observer.observe(section)
+    return () => observer.disconnect()
+  }, [onVisibilityChange])
 
   return (
-    <section id="contact" className="contact" tabIndex={-1} aria-label="Contact us">
+    <section ref={root} id="contact" className="contact" tabIndex={-1} aria-label="Contact us">
       <div className="contact-scene">
         <div className="contact-content">
           <div className="contact-heading">
