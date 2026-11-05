@@ -1,15 +1,11 @@
 .eyebrow.hero-label { max-width: 100%; line-height: 1.3; font-weight: var(--font-weight-medium); color: var(--color-white); }
-.hero-label-window { height: 1.3em; overflow: hidden; }
-.hero-label-track { display: flex; flex-direction: column; animation: hero-label-slide 12s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
-.hero-label-track span { display: block; height: 1.3em; line-height: 1.3; flex-shrink: 0; white-space: nowrap; }
-.hero-label:hover .hero-label-track { animation-play-state: paused; }
+.hero-label-window { height: 1.3em; display: grid; align-items: baseline; overflow: hidden; white-space: nowrap; }
+.hero-label-phrase { grid-area: 1 / 1; line-height: 1.3; }
+.hero-label-phrase--entering { animation: hero-label-crossfade-in 450ms ease-out both; }
+.hero-label-phrase--leaving { animation: hero-label-crossfade-out 450ms ease-out both; }
 .hero-label-accessible { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
-@keyframes hero-label-slide {
-  0%, 28% { transform: translateY(0); }
-  33.333%, 61.333% { transform: translateY(-25%); }
-  66.666%, 94.666% { transform: translateY(-50%); }
-  100% { transform: translateY(-75%); }
-}
+@keyframes hero-label-crossfade-in { from { opacity: 0; } }
+@keyframes hero-label-crossfade-out { to { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) {
-  .hero-label-track { animation: none; }
+  .hero-label-phrase { animation: none; }
 }
