@@ -11,6 +11,16 @@ export default function LoadingScreen({ ready }) {
   const [visible, setVisible] = useState(true)
 
   useEffect(() => {
+    const bootScreen = document.getElementById('boot-loading-screen')
+    document.documentElement.classList.remove('boot-loading')
+    if (!bootScreen) return undefined
+
+    bootScreen.dataset.exiting = 'true'
+    const timer = window.setTimeout(() => bootScreen.remove(), 250)
+    return () => window.clearTimeout(timer)
+  }, [])
+
+  useEffect(() => {
     const timer = window.setTimeout(() => setMinimumTimeElapsed(true), MINIMUM_DISPLAY_TIME)
     return () => window.clearTimeout(timer)
   }, [])

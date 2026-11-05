@@ -10,6 +10,15 @@ import wordmark from '../../assets/wordmark.svg'
 export default function HeroSection({ onReady }) {
   const heroRef = useRef(null)
 
+  const handleHeroLoad = (event) => {
+    const image = event.currentTarget
+    if (typeof image.decode !== 'function') {
+      onReady?.()
+      return
+    }
+    image.decode().catch(() => {}).finally(() => onReady?.())
+  }
+
   useEffect(() => {
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)')
     let frame = 0
@@ -47,7 +56,7 @@ export default function HeroSection({ onReady }) {
       <section className="landing" ref={heroRef} aria-label="Introduction">
         <picture>
           <source media={compactLayoutMedia} srcSet={heroMobile} />
-          <img className="hero-image" src={hero} alt="Marcos and Florencia dancing Argentine tango" loading="eager" fetchPriority="high" decoding="async" onLoad={onReady} onError={onReady} />
+          <img className="hero-image" src={hero} alt="Marcos and Florencia dancing Argentine tango" loading="eager" fetchPriority="high" decoding="async" onLoad={handleHeroLoad} onError={onReady} />
         </picture>
         <div className="hero-nav-space" aria-hidden="true" />
         <div className="hero-content">

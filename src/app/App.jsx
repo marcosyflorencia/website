@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react'
 import HomePage from '../pages/HomePage.jsx'
 import LoadingScreen from '../components/ui/LoadingScreen.jsx'
 
-const LOADING_TIMEOUT = 8000
+const LOADING_TIMEOUT = 30000
 
 export default function App() {
   const [heroReady, setHeroReady] = useState(false)

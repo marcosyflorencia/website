@@ -4,8 +4,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marcos&florencia</title>
+    <script>document.documentElement.classList.add('boot-loading')</script>
+    <style>
+      html.boot-loading, html.boot-loading body { overflow: hidden; }
+      #boot-loading-screen {
+        position: fixed;
+        inset: 0;
+        z-index: 101;
+        display: grid;
+        place-items: center;
+        padding: 1.5rem;
+        overflow: hidden;
+        background: radial-gradient(circle at 50% 42%, #570609, transparent 58%), #180003;
+        color: #fff4e7;
+        opacity: 1;
+        transition: opacity 250ms ease;
+        touch-action: none;
+      }
+      #boot-loading-screen[data-exiting="true"] { opacity: 0; pointer-events: none; }
+      .boot-loading-screen__content { display: grid; width: min(100%, 26rem); justify-items: center; gap: 1.5rem; }
+      .boot-loading-screen__content img { display: block; width: 100%; height: auto; }
+      .boot-loading-screen__wave { display: flex; align-items: center; justify-content: center; gap: 0.5rem; height: 2rem; }
+      .boot-loading-screen__wave span { width: 0.4375rem; height: 0.4375rem; border-radius: 50%; background: #fff; animation: boot-loading-wave 1.2s ease-in-out infinite; }
+      .boot-loading-screen__wave span:nth-child(2) { animation-delay: -100ms; }
+      .boot-loading-screen__wave span:nth-child(3) { animation-delay: -200ms; }
+      .boot-loading-screen__wave span:nth-child(4) { animation-delay: -300ms; }
+      .boot-loading-screen__wave span:nth-child(5) { animation-delay: -400ms; }
+      .boot-loading-screen__wave span:nth-child(6) { animation-delay: -500ms; }
+      .boot-loading-screen__wave span:nth-child(7) { animation-delay: -600ms; }
+      .boot-loading-screen__wave span:nth-child(8) { animation-delay: -700ms; }
+      .boot-loading-screen__wave span:nth-child(9) { animation-delay: -800ms; }
+      @keyframes boot-loading-wave {
+        0%, 100% { opacity: 0.35; transform: translateY(0.375rem) scale(0.8); }
+        50% { opacity: 1; transform: translateY(-0.375rem) scale(1); }
+      }
+      @media (max-width: 600px) {
+        .boot-loading-screen__content { width: min(100%, 20rem); gap: 1.25rem; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #boot-loading-screen { transition-duration: 1ms; }
+        .boot-loading-screen__wave span { animation: none; opacity: 0.7; transform: none; }
+      }
+    </style>
   </head>
   <body>
+    <div id="boot-loading-screen" role="status" aria-live="polite" aria-label="Loading Marcos and Florencia">
+      <div class="boot-loading-screen__content">
+        <img src="/src/assets/wordmark.svg" alt="" width="599" height="221" />
+        <div class="boot-loading-screen__wave" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
