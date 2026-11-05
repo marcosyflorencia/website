@@ -3,12 +3,33 @@
   --events-divider: #c4c4c4;
   --events-divider-muted: rgb(255 244 231 / 20%);
   --events-card-surface: #d0ccc6;
+  --events-sunset-core: color-mix(in srgb, var(--color-accent) 8%, var(--color-sunset-transition));
   background: var(--events-background);
   padding: 0 0 4rem;
 }
 .events:focus { outline: none; }
 .events-inner { width: min(calc(100% - 3rem), 100rem); margin-inline: auto; }
-.skyline-divider { display: block; width: 100%; height: auto; margin-bottom: 3rem; color: var(--events-divider); }
+.events > .events-inner:first-child { position: relative; isolation: isolate; }
+.events > .events-inner:first-child::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: clamp(10rem, 24svh, 16rem);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--color-sunset-transition) 36%,
+    var(--events-sunset-core) 50%,
+    var(--color-sunset-transition) 64%,
+    transparent 100%
+  );
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.skyline-divider { position: relative; z-index: 1; display: block; width: 100%; height: auto; margin-bottom: 3rem; color: var(--events-divider); }
 .skyline-divider path { stroke: currentColor; stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; }
 .events-intro { width: min(calc(100% - var(--section-inline) - var(--section-inline)), var(--section-content-max)); margin: 0 auto 2rem var(--section-inline); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); align-items: start; gap: 3rem; }
 .events-heading { display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
@@ -39,6 +60,13 @@
   .events-intro { gap: 1.5rem; }
 }
 @media (max-width: 900px), (max-width: 1200px) and (orientation: portrait) {
+  .events > .events-inner:first-child {
+    min-height: clamp(9rem, 21svh, 14rem);
+    display: flex;
+    align-items: center;
+  }
+  .events > .events-inner:first-child::before { height: clamp(5rem, 12svh, 8rem); }
+  .events > .events-inner:first-child .skyline-divider { margin-bottom: 0; }
   .events-intro { grid-template-columns: 1fr; justify-items: start; }
   .video-gallery { grid-template-columns: 1fr; gap: 1.25rem; align-items: start; }
   .video-choices { grid-template-columns: repeat(4, minmax(0, 1fr)); }
